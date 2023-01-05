@@ -1,26 +1,26 @@
 import React from 'react';
 
-export const Icon = ({ name }) => {
+const Icon = ({ name }) => {
   switch (name) {
     case 'Bookmark':
-      return <FontAwesomeIcon icon="fa-regular fa-circle-bookmark" />;
+      return <i class="fa-regular fa-circle-bookmark" />;
     case 'Codepen':
-      return <FontAwesomeIcon icon="fa-brands fa-codepen" />;
+      return <i class="fa-brands fa-codepen" />;
     case 'External':
-      return <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />;
+      return <i class="fa-solid fa-arrow-up-right-from-square" />;
     case 'Folder':
-      return <FontAwesomeIcon icon="fa-regular fa-folder-bookmark" />;
+      return <i class="fa-regular fa-folder-bookmark" />;
     case 'GitHub':
-      return <FontAwesomeIcon icon="fa-brands fa-github" />;
+      return <i class="fa-brands fa-github"></i>;
     case 'Linkedin':
-      return <FontAwesomeIcon icon="fa-brands fa-linkedin-in" />;
-    case 'Loader':
-      return <FontAwesomeIcon icon="fa-solid fa-loader" />;
+      return <i class="fa-brands fa-linkedin-in" />;
     case 'ArrowUp':
-      return <FontAwesomeIcon icon="fa-regular fa-circle-arrow-up" />;
+      return <i class="fa-solid fa-circle-arrow-up" />;
     case 'Telegram':
-      return <FontAwesomeIcon icon="fa-brands fa-telegram" />;
+      return <i class="fa-brands fa-telegram" />;
     default:
-      return <FontAwesomeIcon icon="fa-solid fa-arrow-up-right-from-square" />;
+      return <i class="fa-solid fa-arrow-up-right-from-squar" />;
   }
 }
+
+export default Icon
