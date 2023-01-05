@@ -50,7 +50,7 @@ module.exports = {
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({
-    origin: 'top',
+    origin: 'bottom',
     distance: '20px',
     duration: 500,
     delay,
