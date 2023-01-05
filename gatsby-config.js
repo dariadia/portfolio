@@ -17,6 +17,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/favicon/icon.png',
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
