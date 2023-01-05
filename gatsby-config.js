@@ -5,8 +5,8 @@ module.exports = {
     title: 'Daria Diachkova',
     description:
       'Daria Diachkova is a software engineer. Senior Frontend developer. Team Leader. Coding enthusiast.',
-    siteUrl: 'todo',
-    image: 'www.todo.com./some.png',
+    siteUrl: 'https://www.todo.com',
+    image: 'https://www.todo.com./some.png',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,18 +16,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Daria Diachkova',
-        start_url: '/',
-        background_color: config.colors.main,
-        theme_color: config.colors.main,
-        display: 'minimal-ui',
-        icon: 'src/images/logo.png',
-      },
-    },
-    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
