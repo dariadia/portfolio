@@ -9,6 +9,7 @@ tags:
   - Netlify CMS
 company: 'Bookmate'
 image: './images/dk-journal-min.png'
+type: 'project'
 ---
 
-Building a custom multisite compatible WordPress plugin to build global search with Algolia
+todo
