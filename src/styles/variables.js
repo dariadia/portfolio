@@ -18,13 +18,9 @@ const variables = css`
     --white: #e6f1ff;
     --green: #64ffda;
     --green-tint: rgba(100, 255, 218, 0.1);
-    --pink: #f57dff;
-    --blue: #57cbff;
-
-    --font-sans: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
+    --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
-    --font-mono: 'Work Sans', 'Roboto', monospace;
-
+    --font-main: 'Work Sans', 'Roboto', monospace;
     --xxs: 12px;
     --xs: 13px;
     --sm: 14px;
@@ -33,23 +29,18 @@ const variables = css`
     --xl: 20px;
     --xxl: 22px;
     --heading: 36px;
-
     --border-radius: 4px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
-
     --tab-height: 42px;
     --tab-width: 120px;
-
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
     --hamburger-width: 30px;
-
-    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
-    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
-    --ham-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    --ham-after-active: bottom 0.1s ease-out,
+    --hamburger-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    --hamburger-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    --hamburger-after: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --hamburger-after-active: bottom 0.1s ease-out,
       transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
   }
 `;
