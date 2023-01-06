@@ -157,12 +157,6 @@ const Menu = () => {
   let firstFocusableEl;
   let lastFocusableEl;
 
-  const setFocusables = () => {
-    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
-    firstFocusableEl = menuFocusables[0];
-    lastFocusableEl = menuFocusables[menuFocusables.length - 1];
-  };
-
   const handleBackwardTab = e => {
     if (document.activeElement === firstFocusableEl) {
       e.preventDefault();
@@ -174,6 +168,12 @@ const Menu = () => {
     if (document.activeElement === lastFocusableEl) {
       e.preventDefault();
       firstFocusableEl.focus();
+    }
+  };
+
+  const onResize = e => {
+    if (e.currentTarget.innerWidth > 768) {
+      setMenuOpen(false);
     }
   };
 
@@ -202,20 +202,17 @@ const Menu = () => {
         break;
       }
     }
-  };
-
-  const onResize = e => {
-    if (e.currentTarget.innerWidth > 768) {
-      setMenuOpen(false);
-    }
+  };  
+  const setFocusables = () => {
+    menuFocusables = [buttonRef.current, ...Array.from(navRef.current.querySelectorAll('a'))];
+    firstFocusableEl = menuFocusables[0];
+    lastFocusableEl = menuFocusables[menuFocusables.length - 1];
   };
 
   useEffect(() => {
     document.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
-
     setFocusables();
-
     return () => {
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
