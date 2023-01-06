@@ -5,7 +5,7 @@ import { Icon } from '@components';
 import { socialMedia } from '@config';
 
 const StyledFooter = styled.footer`
-  ${({ theme }) => theme.mixins.flexCenter};
+  ${({ theme }) => theme.mixins.flexCentered};
   flex-direction: column;
   height: auto;
   min-height: 70px;
@@ -36,7 +36,7 @@ const StyledSocialLinks = styled.div`
 
 const StyledCredit = styled.div`
   color: var(--light-slate);
-  font-family: var(--font-mono);
+  font-family: var(--font-main);
   font-size: var(--xxs);
   line-height: 1;
   a {
