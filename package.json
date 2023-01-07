@@ -1,0 +1,66 @@
+{
+  "name": "portfolio",
+  "description": "@dariadia's portfolio",
+  "version": "1.0.0",
+  "keywords": [
+    "gatsby",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "browserslist": "> 0.25%, not dead",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "5.3.3",
+    "gatsby-plugin-image": "^3.3.2",
+    "gatsby-plugin-manifest": "^5.3.1",
+    "gatsby-plugin-react-helmet": "^6.3.0",
+    "gatsby-plugin-robots-txt": "^1.5.6",
+    "gatsby-plugin-sharp": "^5.3.2",
+    "gatsby-plugin-sitemap": "^6.3.1",
+    "gatsby-plugin-styled-components": "^6.3.0",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "^7.3.1",
+    "gatsby-source-filesystem": "^5.3.1",
+    "gatsby-transformer-remark": "^6.3.2",
+    "gatsby-transformer-sharp": "^5.3.1",
+    "lodash": "^4.17.19",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-transition-group": "^4.3.0",
+    "scrollreveal": "^4.0.5",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-react": "^7.13.13",
+    "@upstatement/eslint-config": "^1.0.0",
+    "@upstatement/prettier-config": "^1.0.0",
+    "babel-preset-gatsby": "^3.3.1",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.2.1"
+  }
+}
