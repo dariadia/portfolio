@@ -11,7 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
-console.log(postTemplate)
+
   const result = await graphql(`{
   postsRemark: allMarkdownRemark(
     filter: {fileAbsolutePath: {regex: "/content/posts/"}}

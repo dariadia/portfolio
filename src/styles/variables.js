@@ -14,10 +14,8 @@ const variables = css`
     --dark-slate: #495670;
     --slate: #8892b0;
     --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
+    --light-text: #f6fcf6;
+    --accent-tint: rgba(135,214,127, 0.1);
     --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
     --font-main: 'Work Sans', 'Roboto', monospace;

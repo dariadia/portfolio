@@ -19,7 +19,7 @@ const StyledMeSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: clamp(var(--sm), 5vw, var(--md));
     font-weight: 400;

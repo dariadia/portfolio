@@ -117,14 +117,14 @@ const StyledProject = styled.li`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: var(--xs);
     font-weight: 400;
   }
 
   .project-title {
-    color: var(--lightest-slate);
+    color: var(--light-text);
     font-size: clamp(24px, 5vw, 28px);
 
     @media (min-width: 768px) {
@@ -132,7 +132,7 @@ const StyledProject = styled.li`
     }
 
     @media (max-width: 768px) {
-      color: var(--white);
+      color: white;
 
       a {
         position: static;
@@ -176,7 +176,7 @@ const StyledProject = styled.li`
     }
 
     strong {
-      color: var(--white);
+      color: white;
       font-weight: normal;
     }
   }
@@ -203,7 +203,7 @@ const StyledProject = styled.li`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--lightest-slate);
+        color: var(--light-text);
       }
     }
   }
@@ -214,7 +214,7 @@ const StyledProject = styled.li`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: var(--lightest-slate);
+    color: var(--light-text);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};
@@ -238,7 +238,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
+      background-color: var(--accent);
       border-radius: var(--border-radius);
       vertical-align: middle;
 

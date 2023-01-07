@@ -78,14 +78,14 @@ const StyledPost = styled.li`
 
   .post__icon {
     ${({ theme }) => theme.mixins.flexBetween};
-    color: var(--green);
+    color: var(--accent);
     margin-bottom: 30px;
     margin-left: -5px;
   }
 
   .post__title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--light-text);
     font-size: var(--xxl);
 
     a {
@@ -125,7 +125,7 @@ const StyledPost = styled.li`
     list-style: none;
 
     li {
-      color: var(--green);
+      color: var(--accent);
       font-family: var(--font-main);
       font-size: var(--xxs);
       line-height: 1.75;
