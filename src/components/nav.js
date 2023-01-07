@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background-color: var(--main);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -37,8 +37,8 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        background-color: var(--main);
+        box-shadow: 0 10px 30px -10px var(--shadow-main);
       `};
 
     ${props =>
@@ -47,7 +47,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--shadow-main);
       `};
   }
 `;
@@ -56,18 +56,19 @@ const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
   width: 100%;
-  color: var(--light-text);
+  color: var(--text-light);
   font-family: var(--font-main);
   counter-reset: item 0;
   z-index: 12;
-
   .logo {
     ${({ theme }) => theme.mixins.flexCentered};
-
     a {
       color: var(--accent);
       width: 42px;
       height: 42px;
+      &:hover {
+        color: var(--highlight);
+      }
     }
   }
 `;
@@ -94,9 +95,11 @@ const StyledLinks = styled.div`
 
       a {
         padding: 10px;
-
+        &:hover {
+          color: var(--highlight);
+        }
         &:before {
-          content: '0' counter(item) '.';
+          content: '֯֯֯❯' counter(item) '.';
           margin-right: 5px;
           color: var(--accent);
           font-size: var(--xxs);

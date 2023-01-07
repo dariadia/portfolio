@@ -85,7 +85,6 @@ const StyledHamburgerButton = styled.button`
 
 const StyledSidebar = styled.aside`
   display: none;
-
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.flexCentered};
     position: fixed;
@@ -96,8 +95,8 @@ const StyledSidebar = styled.aside`
     width: min(75vw, 400px);
     height: 100vh;
     outline: 0;
-    background-color: var(--light-navy);
-    box-shadow: -10px 0px 30px -15px var(--navy-shadow);
+    background-color: var(--complementary);
+    box-shadow: -10px 0px 30px -15px var(--shadow-main);
     z-index: 9;
     transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
     visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
@@ -108,7 +107,7 @@ const StyledSidebar = styled.aside`
     ${({ theme }) => theme.mixins.flexBetween};
     width: 100%;
     flex-direction: column;
-    color: var(--light-text);
+    color: var(--text-light);
     font-family: var(--font-main);
     text-align: center;
   }

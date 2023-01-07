@@ -31,7 +31,7 @@ const StyledMeSection = styled.section`
 
   h3 {
     margin-top: 5px;
-    color: var(--slate);
+    color: var(--text-light);
     line-height: 0.9;
   }
 

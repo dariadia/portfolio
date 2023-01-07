@@ -124,7 +124,7 @@ const StyledProject = styled.li`
   }
 
   .project-title {
-    color: var(--light-text);
+    color: var(--text-light);
     font-size: clamp(24px, 5vw, 28px);
 
     @media (min-width: 768px) {
@@ -157,8 +157,8 @@ const StyledProject = styled.li`
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
-    color: var(--light-slate);
+    background-color: var(--complementary);
+    color: var(--text-light);
     font-size: var(--lg);
 
     @media (max-width: 768px) {
@@ -192,7 +192,7 @@ const StyledProject = styled.li`
 
     li {
       margin: 0 20px 5px 0;
-      color: var(--light-slate);
+      color: var(--text-light);
       font-family: var(--font-main);
       font-size: var(--xs);
       white-space: nowrap;
@@ -203,7 +203,7 @@ const StyledProject = styled.li`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--light-text);
+        color: var(--text-light);
       }
     }
   }
@@ -214,7 +214,7 @@ const StyledProject = styled.li`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: var(--light-text);
+    color: var(--text-light);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};
@@ -265,7 +265,7 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
+        background-color: var(--main);
         mix-blend-mode: screen;
       }
     }

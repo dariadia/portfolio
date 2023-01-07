@@ -20,7 +20,7 @@ const StyledSocialLinks = styled.div`
     width: 100%;
     max-width: 270px;
     margin: 0 auto 10px;
-    color: var(--light-slate);
+    color: var(--text-light);
   }
 
   ul {
@@ -30,12 +30,13 @@ const StyledSocialLinks = styled.div`
     list-style: none;
     a {
       padding: 10px;
+      color: var(--accent-dark);
     }
   }
 `;
 
 const StyledCredit = styled.div`
-  color: var(--light-slate);
+  color: var(--text-light);
   font-family: var(--font-main);
   font-size: var(--xxs);
   line-height: 1;
