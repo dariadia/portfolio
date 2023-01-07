@@ -215,25 +215,23 @@ const ArchivePage = ({ location, data }) => {
 
 export default ArchivePage;
 
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/projects/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            title
-            tags
-            github
-            url
-            company
-          }
-          html
+export const pageQuery = graphql`{
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/content/projects/"}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          date
+          title
+          tags
+          github
+          url
+          company
         }
+        html
       }
     }
   }
-`;
+}`;

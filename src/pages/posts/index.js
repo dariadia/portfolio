@@ -196,25 +196,22 @@ const PostsPage = ({ location, data }) => {
 
 export default PostsPage;
 
-export const pageQuery = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { draft: { ne: true } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            description
-            slug
-            date
-            tags
-            draft
-          }
-          html
+export const pageQuery = graphql`{
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/content/posts/"}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          description
+          slug
+          date
+          tags
         }
+        html
       }
     }
   }
-`;
+}`;

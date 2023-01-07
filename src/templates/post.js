@@ -50,6 +50,7 @@ const StyledPostContent = styled.div`
 `;
 
 const PostTemplate = ({ data, location }) => {
+  if (!data.markdownRemark) return
   const { frontmatter, html } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
 

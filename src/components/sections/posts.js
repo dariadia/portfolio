@@ -149,29 +149,24 @@ const StyledPost = styled.li`
 `;
 
 const Posts = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      posts: allMarkdownRemark(
-        filter: {
-          fileAbsolutePath: { regex: "/content/posts/" }
-          frontmatter: { type: { eq: "post" } }
+  const data = useStaticQuery(graphql`{
+  posts: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/content/posts/"}, frontmatter: {type: {eq: "post"}}}
+    sort: {frontmatter: {date: DESC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          tags
+          github
+          url
         }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              tags
-              github
-              url
-            }
-            html
-          }
-        }
+        html
       }
     }
-  `);
+  }
+}`);
 
   const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
