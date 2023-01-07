@@ -11,29 +11,27 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
-
-  const result = await graphql(`
-    {
-      postsRemark: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/posts/" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              slug
-            }
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
-          fieldValue
+console.log(postTemplate)
+  const result = await graphql(`{
+  postsRemark: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/content/posts/"}}
+    sort: {frontmatter: {date: DESC}}
+    limit: 1000
+  ) {
+    edges {
+      node {
+        frontmatter {
+          slug
         }
       }
     }
-  `);
+  }
+  tagsGroup: allMarkdownRemark(limit: 2000) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+    }
+  }
+}`);
 
   if (result.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`);

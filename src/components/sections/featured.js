@@ -286,31 +286,29 @@ const StyledProject = styled.li`
 `;
 
 const Featured = () => {
-  const data = useStaticQuery(graphql`
-    {
-      featured: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/featured/" } }
-        sort: { fields: [frontmatter___date], order: ASC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              cover {
-                childImageSharp {
-                  gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-                }
-              }
-              tags
-              github
-              url
+  const data = useStaticQuery(graphql`{
+  featured: allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/content/featured/"}}
+    sort: {frontmatter: {date: ASC}}
+  ) {
+    edges {
+      node {
+        frontmatter {
+          title
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
-            html
           }
+          tags
+          github
+          url
         }
+        html
       }
     }
-  `);
+  }
+}`);
 
   const featuredProjects = data.featured.edges.filter(({ node }) => node);
   const revealTitle = useRef(null);

@@ -60,13 +60,11 @@ const TagsPage = ({
 
 export default TagsPage;
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(limit: 2000, filter: { frontmatter: { draft: { ne: true } } }) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
+export const pageQuery = graphql`{
+  allMarkdownRemark(limit: 2000) {
+    group(field: {frontmatter: {tags: SELECT}}) {
+      fieldValue
+      totalCount
     }
   }
-`;
+}`;
