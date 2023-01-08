@@ -4,6 +4,7 @@ title: 'Junior Frontend Developer'
 company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'February 2020 - February 2021'
+year: 2020
 url: 'https://www.bookmate.com/'
 tags:
   - React

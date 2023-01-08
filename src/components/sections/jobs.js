@@ -9,7 +9,6 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
   max-width: 700px;
-
   .inner {
     display: flex;
     @media (max-width: 600px) {
@@ -61,6 +60,9 @@ const StyledTabList = styled.div`
       }
     }
   }
+  .job-year-label {
+    margin-right: 8px;
+  }
 `;
 
 const StyledTabButton = styled.button`
@@ -89,7 +91,6 @@ const StyledTabButton = styled.button`
     border-bottom: 2px solid var(--accent-tint);
     text-align: center;
   }
-
   &:hover,
   &:focus {
     background-color: var(--complementary);
@@ -175,6 +176,7 @@ const Jobs = () => {
           location
           range
           url
+          year
         }
         html
       }
@@ -228,12 +230,11 @@ const Jobs = () => {
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
       <h2 className="subheading">Where I’ve Worked</h2>
-
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
             jobsData.map(({ node }, i) => {
-              const { title } = node.frontmatter;
+              const { title, year } = node.frontmatter;
               return (
                 <StyledTabButton
                   key={i}
@@ -245,6 +246,7 @@ const Jobs = () => {
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
                   aria-controls={`panel-${i}`}>
+                  <span className="job-year-label">{year}:</span>
                   <span>{title}</span>
                 </StyledTabButton>
               );
