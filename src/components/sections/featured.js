@@ -124,9 +124,12 @@ const StyledProject = styled.li`
   }
 
   .project-title {
-    color: var(--text-light);
+    color: var(--accent);
+    font-family: var(--font-main);
     font-size: clamp(24px, 5vw, 28px);
-
+    > a:hover {
+      color: var(--highlight);
+    }
     @media (min-width: 768px) {
       margin: 0 0 20px;
     }
@@ -238,43 +241,22 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--accent);
       border-radius: var(--border-radius);
       vertical-align: middle;
-
       &:hover,
       &:focus {
-        background: transparent;
         outline: 0;
-
-        &:before,
         .img {
-          background: transparent;
           filter: none;
+          transition: all 0.2s;
         }
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 3;
-        transition: var(--transition);
-        background-color: var(--main);
-        mix-blend-mode: screen;
       }
     }
 
     .img {
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
-
+      filter: grayscale(100%) brightness(90%) drop-shadow(-8px -8px 12px var(--accent-dark));
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
@@ -337,7 +319,6 @@ const Featured = () => {
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
                     <h3 className="project-title">
                       <a href={url}>{title}</a>
                     </h3>
