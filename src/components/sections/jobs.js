@@ -8,9 +8,10 @@ import isServer from '@constants/server-helper';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
   .inner {
     display: flex;
+    max-width: 800px;
+    margin: auto;
     @media (max-width: 600px) {
       display: block;
     }
@@ -27,7 +28,6 @@ const StyledTabList = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
@@ -73,7 +73,7 @@ const StyledTabButton = styled.button`
   height: var(--tab-height);
   padding: 0 20px 2px;
   border-left: 2px solid var(--accent-tint);
-  background-color: transparent;
+  background-color: ${({ isActive }) => (isActive ? 'var(--complementary)' : 'transparent')};;
   color: ${({ isActive }) => (isActive ? 'var(--accent)' : 'var(--text-light)')};
   font-family: var(--font-main);
   font-size: var(--xs);
@@ -91,10 +91,6 @@ const StyledTabButton = styled.button`
     border-bottom: 2px solid var(--accent-tint);
     text-align: center;
   }
-  &:hover,
-  &:focus {
-    background-color: var(--complementary);
-  }
 `;
 
 const StyledHighlight = styled.div`
@@ -109,7 +105,6 @@ const StyledHighlight = styled.div`
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
-
   @media (max-width: 600px) {
     top: auto;
     bottom: 0;
@@ -127,8 +122,7 @@ const StyledHighlight = styled.div`
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-  margin-left: 20px;
-
+  margin-left: 48px;
   @media (max-width: 600px) {
     margin-left: 0;
   }
@@ -138,17 +132,14 @@ const StyledTabPanel = styled.div`
   width: 100%;
   height: auto;
   padding: 10px 5px;
-
   ul {
     ${({ theme }) => theme.mixins.listStyled};
   }
-
   h3 {
     margin-bottom: 2px;
     font-size: var(--xxl);
     font-weight: 500;
     line-height: 1.3;
-
     .company {
       color: var(--accent);
     }
@@ -229,7 +220,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="subheading">Where I’ve Worked</h2>
+      <h2 className="subheading centered">Where I’ve Worked</h2>
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
@@ -253,7 +244,6 @@ const Jobs = () => {
             })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
-
         <StyledTabPanels>
           {jobsData &&
             jobsData.map(({ node }, i) => {
@@ -272,7 +262,7 @@ const Jobs = () => {
                     <h3>
                       <span>{title}</span>
                       <span className="company">
-                        &nbsp;@&nbsp;
+                        &nbsp;at&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>

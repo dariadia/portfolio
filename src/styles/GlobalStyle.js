@@ -277,6 +277,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  .centered {
+    justify-content: center;
+  }
+
   ul {
     &.fancy-list {
       padding: 0;
