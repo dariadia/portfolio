@@ -52,7 +52,7 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="subheading overline">What’s Next?</h2>
       <h2 className="title">Get In Touch</h2>
       <p>
         todo: if I', looking for a job, or just say "hi"

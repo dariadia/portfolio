@@ -126,7 +126,7 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="subheading">About Me</h2>
       <div className="inner">
         <StyledText>
           <div>
@@ -150,7 +150,7 @@ const About = () => {
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Headshot"
+              alt="Daria Diachkova photo"
             />
           </div>
         </StyledPic>

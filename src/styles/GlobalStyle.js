@@ -176,7 +176,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
-  .numbered-heading {
+  .subheading {
+    font-family: var(--font-main);
     display: flex;
     align-items: center;
     position: relative;
@@ -189,37 +190,17 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
       bottom: 4px;
       counter-increment: section;
-      content: counter(section) '.';
+      content: '✰' counter(section) '.';
       margin-right: 10px;
       color: var(--accent);
       font-family: var(--font-main);
       font-size: clamp(var(--md), 3vw, var(--xl));
       font-weight: 400;
+      text-decoration: underline;
 
       @media (max-width: 480px) {
         margin-bottom: -3px;
         margin-right: 5px;
-      }
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      position: relative;
-      top: -5px;
-      width: 300px;
-      height: 1px;
-      margin-left: 20px;
-      background-color: var(--accent-tint);
-
-      @media (max-width: 1080px) {
-        width: 200px;
-      }
-      @media (max-width: 768px) {
-        width: 100%;
-      }
-      @media (max-width: 600px) {
-        margin-left: 10px;
       }
     }
   }
