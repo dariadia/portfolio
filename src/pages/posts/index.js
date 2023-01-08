@@ -143,15 +143,13 @@ const PostsPage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet title="Posts" />
-
       <StyledMainContainer>
         <header>
-          <h1 className="big-heading">Posts</h1>
+          <h1 className="heading-main">Posts</h1>
           <p className="subtitle">
             a collection
           </p>
         </header>
-
         <StyledGrid>
           {posts.length > 0 &&
             posts.map(({ node }, i) => {

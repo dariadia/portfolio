@@ -158,9 +158,15 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.1;
   }
 
-  .big-heading {
+  .heading-main {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
+  }
+
+  .subheading-main {
+    margin: 24px 0;
+    font-size: clamp(32px, 6vw, 58px);
+    font-family: var(--font-main);
   }
 
   .medium-heading {

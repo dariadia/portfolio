@@ -64,8 +64,7 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCentered};
     a {
       color: var(--accent);
-      width: 42px;
-      height: 42px;
+      font-size: 24px;
       &:hover {
         color: var(--highlight);
       }
