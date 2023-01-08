@@ -164,9 +164,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .subheading-main {
-    margin: 24px 0;
-    font-size: clamp(32px, 6vw, 58px);
+    margin: 8px 0;
+    font-size: clamp(32px, 6vw, 48px);
     font-family: var(--font-main);
+    color: var(--accent);
+    filter: drop-shadow(2px 4px 6px var(--accent-dark));
   }
 
   .medium-heading {

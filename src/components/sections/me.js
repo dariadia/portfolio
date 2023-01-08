@@ -14,7 +14,7 @@ const StyledMeSection = styled.section`
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
-    padding-top: var(--nav-height);
+    padding-top: var(--nav-height) / 2;
   }
 
   h1 {
@@ -27,15 +27,6 @@ const StyledMeSection = styled.section`
     @media (max-width: 480px) {
       margin: 0 0 20px 2px;
     }
-  }
-
-  h3 {
-    margin-top: 5px;
-    color: var(--text-light);
-    line-height: 0.9;
-  }
-  p {
-    max-width: 540px;
   }
   .email-link {
     ${({ theme }) => theme.mixins.buttonBig};
