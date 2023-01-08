@@ -49,7 +49,7 @@ const StyledText = styled.div`
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
-
+  margin-top: -48px;
   @media (max-width: 768px) {
     margin: 50px auto 0;
     width: 70%;
@@ -61,54 +61,20 @@ const StyledPic = styled.div`
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-    background-color: var(--accent);
-
     &:hover,
     &:focus {
       outline: 0;
-
-      &:after {
-        top: 15px;
-        left: 15px;
-      }
-
       .img {
         filter: none;
         mix-blend-mode: normal;
       }
     }
-
     .img {
       position: relative;
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      filter: grayscale(100%) drop-shadow(8px 8px 12px var(--accent-dark));
       transition: var(--transition);
-    }
-
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-    }
-
-    &:before {
-      top: 0;
-      left: 0;
-      background-color: var(--main);
-      mix-blend-mode: screen;
-    }
-
-    &:after {
-      border: 2px solid var(--accent);
-      top: 20px;
-      left: 20px;
-      z-index: -1;
     }
   }
 `;
