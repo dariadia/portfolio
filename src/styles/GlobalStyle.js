@@ -282,7 +282,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ul {
-    &.fancy-list {
+    &.list-styled {
       padding: 0;
       margin: 0;
       list-style: none;

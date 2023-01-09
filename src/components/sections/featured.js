@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import isServer from '@constants/server-helper';
 import { srConfig } from '@config';
 import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
+import kebabCase from 'lodash/kebabCase';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.listReset};
@@ -58,6 +59,12 @@ const StyledProject = styled.li`
     }
     .project-tags-list {
       justify-content: flex-end;
+      > li > .inline-link { 
+        color: var(--text-light);
+        &:hover {
+          color: var(--accent);
+        }
+      }
 
       @media (max-width: 768px) {
         justify-content: flex-start;
@@ -328,8 +335,12 @@ const Featured = () => {
                     />
                     {tags.length && (
                       <ul className="project-tags-list">
-                        {tags.map((tags, i) => (
-                          <li key={i}>{tags}</li>
+                        {tags.map(tag => (
+                          <li key={tag.fieldValue}>
+                            <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                              {tag}
+                            </Link>
+                          </li>
                         ))}
                       </ul>
                     )}
