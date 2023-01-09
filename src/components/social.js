@@ -12,27 +12,26 @@ const StyledSocialList = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-
   &:after {
     content: '';
     display: block;
     width: 1px;
-    height: 90px;
+    height: 42px;
     margin: 0 auto;
-    background-color: var(--light-slate);
+    background-color: var(--accent);
+    border: 1px dashed var(--main);
   }
-
   li {
     &:last-of-type {
       margin-bottom: 20px;
     }
-
     a {
       padding: 10px;
-
+      color: var(--accent-dark);
       &:hover,
       &:focus {
         transform: translateY(-3px);
+        color: var(--highlight);
       }
     }
   }

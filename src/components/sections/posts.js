@@ -71,7 +71,7 @@ const StyledPost = styled.li`
     height: 100%;
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
+    background-color: var(--complementary);
     transition: var(--transition);
     overflow: auto;
   }
@@ -81,14 +81,14 @@ const StyledPost = styled.li`
     margin-bottom: 35px;
 
     .folder {
-      color: var(--green);
+      color: var(--accent);
     }
 
     .project-links {
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--light-slate);
+      color: var(--text-light);
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
@@ -99,7 +99,7 @@ const StyledPost = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--text-light);
     font-size: var(--xxl);
 
     a {
@@ -119,7 +119,7 @@ const StyledPost = styled.li`
   }
 
   .project-description {
-    color: var(--light-slate);
+    color: var(--text-light);
     font-size: 17px;
 
     a {
@@ -159,8 +159,8 @@ const Posts = () => {
         frontmatter {
           title
           tags
-          github
-          url
+          slug
+          description
         }
         html
       }
@@ -187,9 +187,9 @@ const Posts = () => {
   const firstSix = posts.slice(0, GRID_LIMIT);
   const postsToShow = showMore ? posts : firstSix;
 
-  const projectInner = node => {
-    const { frontmatter, html } = node;
-    const { github, url, title, tags } = frontmatter;
+  const postInner = node => {
+    const { frontmatter } = node;
+    const { slug, title, description, tags } = frontmatter;
 
     return (
       <div className="project-inner">
@@ -199,14 +199,9 @@ const Posts = () => {
               <Icon name="Folder" />
             </div>
             <div className="project-links">
-              {github && (
-                <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
-                  <Icon name="GitHub" />
-                </a>
-              )}
-              {url && (
+              {slug && (
                 <a
-                  href={url}
+                  href={slug}
                   aria-label="url Link"
                   className="url"
                   target="_blank"
@@ -216,16 +211,13 @@ const Posts = () => {
               )}
             </div>
           </div>
-
           <h3 className="project-title">
-            <a href={url} target="_blank" rel="noreferrer">
+            <a href={slug} target="_blank" rel="noreferrer">
               {title}
             </a>
           </h3>
-
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="project-description">{description}</div>
         </header>
-
         <footer>
           {tags && (
             <ul className="project-tags-list">
@@ -250,7 +242,7 @@ const Posts = () => {
           <>
             {postsToShow &&
               postsToShow.map(({ node }, i) => (
-                <StyledPost key={i}>{projectInner(node)}</StyledPost>
+                <StyledPost key={i}>{postInner(node)}</StyledPost>
               ))}
           </>
         ) : (
@@ -268,7 +260,7 @@ const Posts = () => {
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>
-                    {projectInner(node)}
+                    {postInner(node)}
                   </StyledPost>
                 </CSSTransition>
               ))}

@@ -8,10 +8,10 @@ import isServer from '@constants/server-helper';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
-
   .inner {
     display: flex;
+    max-width: 800px;
+    margin: auto;
     @media (max-width: 600px) {
       display: block;
     }
@@ -28,7 +28,6 @@ const StyledTabList = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-
   @media (max-width: 600px) {
     display: flex;
     overflow-x: auto;
@@ -61,6 +60,9 @@ const StyledTabList = styled.div`
       }
     }
   }
+  .job-year-label {
+    margin-right: 8px;
+  }
 `;
 
 const StyledTabButton = styled.button`
@@ -70,9 +72,9 @@ const StyledTabButton = styled.button`
   width: 100%;
   height: var(--tab-height);
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
-  background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
+  border-left: 2px solid var(--accent-tint);
+  background-color: ${({ isActive }) => (isActive ? 'var(--complementary)' : 'transparent')};;
+  color: ${({ isActive }) => (isActive ? 'var(--accent)' : 'var(--text-light)')};
   font-family: var(--font-main);
   font-size: var(--xs);
   text-align: left;
@@ -86,13 +88,8 @@ const StyledTabButton = styled.button`
     min-width: 120px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-bottom: 2px solid var(--accent-tint);
     text-align: center;
-  }
-
-  &:hover,
-  &:focus {
-    background-color: var(--light-navy);
   }
 `;
 
@@ -104,11 +101,10 @@ const StyledHighlight = styled.div`
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
-  background: var(--green);
+  background: var(--accent);
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
-
   @media (max-width: 600px) {
     top: auto;
     bottom: 0;
@@ -126,8 +122,7 @@ const StyledHighlight = styled.div`
 const StyledTabPanels = styled.div`
   position: relative;
   width: 100%;
-  margin-left: 20px;
-
+  margin-left: 48px;
   @media (max-width: 600px) {
     margin-left: 0;
   }
@@ -137,25 +132,22 @@ const StyledTabPanel = styled.div`
   width: 100%;
   height: auto;
   padding: 10px 5px;
-
   ul {
     ${({ theme }) => theme.mixins.listStyled};
   }
-
   h3 {
     margin-bottom: 2px;
     font-size: var(--xxl);
     font-weight: 500;
     line-height: 1.3;
-
     .company {
-      color: var(--green);
+      color: var(--accent);
     }
   }
 
   .range {
     margin-bottom: 25px;
-    color: var(--light-slate);
+    color: var(--text-light);
     font-family: var(--font-main);
     font-size: var(--xs);
   }
@@ -175,6 +167,7 @@ const Jobs = () => {
           location
           range
           url
+          year
         }
         html
       }
@@ -227,13 +220,12 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
-
+      <h2 className="subheading centered">Where I’ve Worked</h2>
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
             jobsData.map(({ node }, i) => {
-              const { title } = node.frontmatter;
+              const { title, year } = node.frontmatter;
               return (
                 <StyledTabButton
                   key={i}
@@ -245,13 +237,13 @@ const Jobs = () => {
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
                   aria-controls={`panel-${i}`}>
+                  <span className="job-year-label">{year}:</span>
                   <span>{title}</span>
                 </StyledTabButton>
               );
             })}
           <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
-
         <StyledTabPanels>
           {jobsData &&
             jobsData.map(({ node }, i) => {
@@ -270,7 +262,7 @@ const Jobs = () => {
                     <h3>
                       <span>{title}</span>
                       <span className="company">
-                        &nbsp;@&nbsp;
+                        &nbsp;at&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>

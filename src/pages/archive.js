@@ -29,7 +29,7 @@ const StyledTableContainer = styled.div`
     tbody tr {
       &:hover,
       &:focus {
-        background-color: var(--light-navy);
+        background-color: var(--complementary);
       }
     }
 
@@ -79,7 +79,7 @@ const StyledTableContainer = styled.div`
       &.title {
         padding-top: 15px;
         padding-right: 20px;
-        color: var(--lightest-slate);
+        color: var(--text-light);
         font-size: var(--xl);
         font-weight: 600;
         line-height: 1.25;
@@ -144,7 +144,7 @@ const ArchivePage = ({ location, data }) => {
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-heading">Archive</h1>
+          <h1 className="heading-main">Archive</h1>
           <p className="subtitle">A big list of things I’ve worked on</p>
         </header>
 

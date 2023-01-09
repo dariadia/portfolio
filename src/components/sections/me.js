@@ -14,12 +14,12 @@ const StyledMeSection = styled.section`
 
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
-    padding-top: var(--nav-height);
+    padding-top: var(--nav-height) / 2;
   }
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: clamp(var(--sm), 5vw, var(--md));
     font-weight: 400;
@@ -28,21 +28,13 @@ const StyledMeSection = styled.section`
       margin: 0 0 20px 2px;
     }
   }
-
-  h3 {
-    margin-top: 5px;
-    color: var(--slate);
-    line-height: 0.9;
-  }
-
-  p {
-    margin: 20px 0 0;
-    max-width: 540px;
-  }
-
   .email-link {
     ${({ theme }) => theme.mixins.buttonBig};
     margin-top: 50px;
+  }
+  .heading-caption {
+    font-family: var(--font-main);
+    font-size: 18px;
   }
 `;
 
@@ -57,29 +49,24 @@ const Me = () => {
     return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Daria Diachkova.</h2>;
-  const three = <h3 className="big-heading">todo: what i do</h3>;
-  const four = (
-    <p>
-      todo: about me
-    </p>
-  );
-
-  const items = [one, two, three, four];
+  const introItems = [
+      <h1 className="heading-caption">Hi, my name is</h1>,
+      <h2 className="heading-main">Daria Diachkova.</h2>,
+      <h3 className="subheading-main">I build things for the web.</h3>,
+  ]
 
   return (
     <StyledMeSection>
       {prefersReducedMotion ? (
         <>
-          {items.map((item, i) => (
+          {introItems.map((item, i) => (
             <div key={i}>{item}</div>
           ))}
         </>
       ) : (
         <TransitionGroup component={null}>
           {isMounted &&
-            items.map((item, i) => (
+            introItems.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={LOAD_DEPLAY}>
                 <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
               </CSSTransition>

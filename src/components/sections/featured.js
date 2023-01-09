@@ -117,22 +117,25 @@ const StyledProject = styled.li`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: var(--xs);
     font-weight: 400;
   }
 
   .project-title {
-    color: var(--lightest-slate);
+    color: var(--accent);
+    font-family: var(--font-main);
     font-size: clamp(24px, 5vw, 28px);
-
+    > a:hover {
+      color: var(--highlight);
+    }
     @media (min-width: 768px) {
       margin: 0 0 20px;
     }
 
     @media (max-width: 768px) {
-      color: var(--white);
+      color: white;
 
       a {
         position: static;
@@ -157,8 +160,8 @@ const StyledProject = styled.li`
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
-    color: var(--light-slate);
+    background-color: var(--complementary);
+    color: var(--text-light);
     font-size: var(--lg);
 
     @media (max-width: 768px) {
@@ -176,7 +179,7 @@ const StyledProject = styled.li`
     }
 
     strong {
-      color: var(--white);
+      color: white;
       font-weight: normal;
     }
   }
@@ -192,7 +195,7 @@ const StyledProject = styled.li`
 
     li {
       margin: 0 20px 5px 0;
-      color: var(--light-slate);
+      color: var(--text-light);
       font-family: var(--font-main);
       font-size: var(--xs);
       white-space: nowrap;
@@ -203,7 +206,7 @@ const StyledProject = styled.li`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--lightest-slate);
+        color: var(--text-light);
       }
     }
   }
@@ -214,7 +217,7 @@ const StyledProject = styled.li`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: var(--lightest-slate);
+    color: var(--text-light);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};
@@ -238,43 +241,22 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
       border-radius: var(--border-radius);
       vertical-align: middle;
-
       &:hover,
       &:focus {
-        background: transparent;
         outline: 0;
-
-        &:before,
         .img {
-          background: transparent;
           filter: none;
+          transition: all 0.2s;
         }
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 3;
-        transition: var(--transition);
-        background-color: var(--navy);
-        mix-blend-mode: screen;
       }
     }
 
     .img {
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1) brightness(90%);
-
+      filter: grayscale(100%) brightness(90%) drop-shadow(-8px -8px 12px var(--accent-dark));
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
@@ -323,7 +305,7 @@ const Featured = () => {
 
   return (
     <section id="projects">
-      <h2 className="numbered-heading" ref={revealTitle}>
+      <h2 className="subheading" ref={revealTitle}>
         A Few Things I’ve Built
       </h2>
       <StyledProjectsGrid>
@@ -337,7 +319,6 @@ const Featured = () => {
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
                     <h3 className="project-title">
                       <a href={url}>{title}</a>
                     </h3>

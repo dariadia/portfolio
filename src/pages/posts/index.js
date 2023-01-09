@@ -68,7 +68,7 @@ const StyledPost = styled.li`
     padding: 2rem 1.75rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
-    background-color: var(--light-navy);
+    background-color: var(--complementary);
 
     header,
     a {
@@ -78,14 +78,14 @@ const StyledPost = styled.li`
 
   .post__icon {
     ${({ theme }) => theme.mixins.flexBetween};
-    color: var(--green);
+    color: var(--accent);
     margin-bottom: 30px;
     margin-left: -5px;
   }
 
   .post__title {
     margin: 0 0 10px;
-    color: var(--lightest-slate);
+    color: var(--text-light);
     font-size: var(--xxl);
 
     a {
@@ -105,12 +105,12 @@ const StyledPost = styled.li`
   }
 
   .post__desc {
-    color: var(--light-slate);
+    color: var(--text-light);
     font-size: 17px;
   }
 
   .post__date {
-    color: var(--light-slate);
+    color: var(--text-light);
     font-family: var(--font-main);
     font-size: var(--xxs);
     text-transform: uppercase;
@@ -125,7 +125,7 @@ const StyledPost = styled.li`
     list-style: none;
 
     li {
-      color: var(--green);
+      color: var(--accent);
       font-family: var(--font-main);
       font-size: var(--xxs);
       line-height: 1.75;
@@ -143,15 +143,13 @@ const PostsPage = ({ location, data }) => {
   return (
     <Layout location={location}>
       <Helmet title="Posts" />
-
       <StyledMainContainer>
         <header>
-          <h1 className="big-heading">Posts</h1>
+          <h1 className="heading-main">Posts</h1>
           <p className="subtitle">
             a collection
           </p>
         </header>
-
         <StyledGrid>
           {posts.length > 0 &&
             posts.map(({ node }, i) => {

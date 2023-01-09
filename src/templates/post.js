@@ -28,7 +28,7 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
-    color: var(--light-slate);
+    color: var(--text-light);
   }
 
   a {
@@ -36,8 +36,8 @@ const StyledPostContent = styled.div`
   }
 
   code {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--accent-tint);
+    color: var(--text-light);
     border-radius: var(--border-radius);
     font-size: var(--sm);
     padding: 0.2em 0.4em;

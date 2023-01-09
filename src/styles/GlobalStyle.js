@@ -20,13 +20,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--accent-tint);
+    color: var(--text-light);
   }
 
   /* Provide basic, default focus styles.*/
   :focus {
-    outline: 2px dashed var(--green);
+    outline: 2px dashed var(--accent);
     outline-offset: 3px;
   }
 
@@ -36,23 +36,23 @@ const GlobalStyle = createGlobalStyle`
   }
 
   :focus-visible {
-    outline: 2px dashed var(--green);
+    outline: 2px dashed var(--accent);
     outline-offset: 3px;
   }
 
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--dark-slate) var(--navy);
+    scrollbar-color: var(--dark-complementary) var(--main);
   }
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--navy);
+    background: var(--main);
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-slate);
-    border: 3px solid var(--navy);
+    background-color: var(--dark-complementary);
+    border: 3px solid var(--main);
     border-radius: 10px;
   }
 
@@ -63,8 +63,8 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
-    color: var(--slate);
+    background-color: var(--main);
+    color: var(--text-light);
     font-family: var(--font-accent);
     font-size: var(--xl);
     line-height: 1.3;
@@ -154,13 +154,21 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-slate);
+    color: var(--text-light);
     line-height: 1.1;
   }
 
-  .big-heading {
+  .heading-main {
     margin: 0;
     font-size: clamp(40px, 8vw, 80px);
+  }
+
+  .subheading-main {
+    margin: 8px 0;
+    font-size: clamp(32px, 6vw, 48px);
+    font-family: var(--font-main);
+    color: var(--accent);
+    filter: drop-shadow(2px 4px 6px var(--accent-dark));
   }
 
   .medium-heading {
@@ -168,7 +176,8 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
-  .numbered-heading {
+  .subheading {
+    font-family: var(--font-main);
     display: flex;
     align-items: center;
     position: relative;
@@ -181,37 +190,17 @@ const GlobalStyle = createGlobalStyle`
       position: relative;
       bottom: 4px;
       counter-increment: section;
-      content: '0' counter(section) '.';
+      content: '✰' counter(section) '.';
       margin-right: 10px;
-      color: var(--green);
+      color: var(--accent);
       font-family: var(--font-main);
       font-size: clamp(var(--md), 3vw, var(--xl));
       font-weight: 400;
+      text-decoration: underline;
 
       @media (max-width: 480px) {
         margin-bottom: -3px;
         margin-right: 5px;
-      }
-    }
-
-    &:after {
-      content: '';
-      display: block;
-      position: relative;
-      top: -5px;
-      width: 300px;
-      height: 1px;
-      margin-left: 20px;
-      background-color: var(--lightest-navy);
-
-      @media (max-width: 1080px) {
-        width: 200px;
-      }
-      @media (max-width: 768px) {
-        width: 100%;
-      }
-      @media (max-width: 600px) {
-        margin-left: 10px;
       }
     }
   }
@@ -238,7 +227,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--green);
+      color: var(--accent);
     }
 
     &.inline-link {
@@ -280,12 +269,16 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: var(--light-navy);
-      color: var(--white);
+      background-color: var(--complementary);
+      color: white;
       font-size: var(--sm);
       border-radius: var(--border-radius);
       padding: 0.3em 0.5em;
     }
+  }
+
+  .centered {
+    justify-content: center;
   }
 
   ul {
@@ -302,14 +295,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--green);
+          color: var(--accent);
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: var(--green);
+    border-left-color: var(--accent);
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -323,7 +316,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: var(--lightest-navy);
+    background-color: var(--accent-tint);
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -349,8 +342,8 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      background-color: var(--green);
-      color: var(--navy);
+      background-color: var(--accent);
+      color: var(--main);
       top: 0;
       left: 0;
       width: auto;
@@ -361,18 +354,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #logo {
-    color: var(--green);
+    color: var(--accent);
   }
 
   .overline {
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: var(--md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--green);
+    color: var(--accent);
     margin: 0 0 20px 0;
     font-size: var(--md);
     font-family: var(--font-main);
@@ -395,7 +388,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--green);
+    color: var(--accent);
 
     .arrow {
       display: block;

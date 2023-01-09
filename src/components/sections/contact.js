@@ -16,7 +16,7 @@ const StyledContactSection = styled.section`
   .overline {
     display: block;
     margin-bottom: 20px;
-    color: var(--green);
+    color: var(--accent);
     font-family: var(--font-main);
     font-size: var(--md);
     font-weight: 400;
@@ -52,7 +52,7 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
+      <h2 className="subheading overline">What’s Next?</h2>
       <h2 className="title">Get In Touch</h2>
       <p>
         todo: if I', looking for a job, or just say "hi"

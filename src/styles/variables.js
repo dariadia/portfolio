@@ -5,19 +5,13 @@ const variables = css`
   :root {
     --main: ${config.colors.main};
     --complementary: ${config.colors.complementary};
+    --dark-complementary: #081507;
     --accent: ${config.colors.accent};
+    --accent-tint: rgba(135,214,127, 0.1);
+    --accent-dark: rgba(70,196,70, 0.7);
     --highlight: ${config.colors.highlight};
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
+    --text-light: #f6fcf6;
+    --shadow-main: rgba(2, 12, 27, 0.7);
     --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
     --font-main: 'Work Sans', 'Roboto', monospace;
