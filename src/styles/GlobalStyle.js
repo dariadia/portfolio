@@ -282,7 +282,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ul {
-    &.fancy-list {
+    &.list-styled {
       padding: 0;
       margin: 0;
       list-style: none;
@@ -292,7 +292,7 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 30px;
         margin-bottom: 10px;
         &:before {
-          content: '▹';
+          content: '❯';
           position: absolute;
           left: 0;
           color: var(--accent);

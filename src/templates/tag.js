@@ -63,7 +63,7 @@ const TagTemplate = ({ pageContext, data, location }) => {
             <Link to="/tags">View all tags</Link>
           </span>
         </h1>
-        <ul className="fancy-list">
+        <ul className="list-styled">
           {edges.map(({ node }) => {
             const { title, slug, date, tags } = node.frontmatter;
             return (
