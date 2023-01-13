@@ -10,7 +10,7 @@ import kebabCase from 'lodash/kebabCase';
 
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.listReset};
-
+  margin-top: 40px;
   a {
     position: relative;
     z-index: 1;
@@ -18,23 +18,19 @@ const StyledProjectsGrid = styled.ul`
 `;
 
 const StyledProject = styled.li`
-  position: relative;
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 24px;
+  grid-template-columns: 2fr 3fr;
   align-items: center;
-
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
   }
 
   &:not(:last-of-type) {
     margin-bottom: 100px;
-
     @media (max-width: 768px) {
       margin-bottom: 70px;
     }
-
     @media (max-width: 480px) {
       margin-bottom: 30px;
     }
@@ -42,14 +38,8 @@ const StyledProject = styled.li`
 
   &:nth-of-type(odd) {
     .project-content {
-      grid-column: 7 / -1;
-      text-align: right;
-
-      @media (max-width: 1080px) {
-        grid-column: 5 / -1;
-      }
+      text-align: center;
       @media (max-width: 768px) {
-        grid-column: 1 / -1;
         padding: 40px 40px 30px;
         text-align: left;
       }
@@ -59,6 +49,8 @@ const StyledProject = styled.li`
     }
     .project-tags-list {
       justify-content: flex-end;
+      flex-direction: column;
+      text-align: right;
       > li > .inline-link { 
         color: var(--text-light);
         &:hover {
@@ -89,34 +81,18 @@ const StyledProject = styled.li`
         margin-right: 0;
       }
     }
-    .project-image {
-      grid-column: 1 / 8;
-
-      @media (max-width: 768px) {
-        grid-column: 1 / -1;
-      }
-    }
   }
 
   .project-content {
     position: relative;
-    grid-column: 1 / 7;
-    grid-row: 1 / -1;
-
-    @media (max-width: 1080px) {
-      grid-column: 1 / 9;
-    }
-
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
-      grid-column: 1 / -1;
       padding: 40px 40px 30px;
       z-index: 5;
     }
-
     @media (max-width: 480px) {
       padding: 30px 25px 20px;
     }
@@ -234,13 +210,10 @@ const StyledProject = styled.li`
 
   .project-image {
     ${({ theme }) => theme.mixins.boxShadow};
-    grid-column: 6 / -1;
-    grid-row: 1 / -1;
     position: relative;
     z-index: 1;
 
     @media (max-width: 768px) {
-      grid-column: 1 / -1;
       height: 100%;
       opacity: 0.25;
     }
@@ -324,8 +297,12 @@ const Featured = () => {
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+                <div className="project-image">
+                  <a href={url ? url : github ? github : '#'}>
+                    <GatsbyImage image={image} alt={title} className="img" />
+                  </a>
+                </div>
                 <div className="project-content">
-                  <div>
                     <h3 className="project-title">
                       <a href={url}>{title}</a>
                     </h3>
@@ -357,12 +334,6 @@ const Featured = () => {
                       )}
                     </div>
                   </div>
-                </div>
-                <div className="project-image">
-                  <a href={url ? url : github ? github : '#'}>
-                    <GatsbyImage image={image} alt={title} className="img" />
-                  </a>
-                </div>
               </StyledProject>
             );
           })}
