@@ -22,6 +22,9 @@ const StyledProject = styled.li`
   grid-gap: 24px;
   grid-template-columns: 2fr 3fr;
   align-items: center;
+  &:nth-child(2) {
+    direction: rtl;
+  }
   @media (max-width: 768px) {
     ${({ theme }) => theme.mixins.boxShadow};
   }
