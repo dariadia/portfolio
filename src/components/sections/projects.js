@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import isServer from '@constants/server-helper';
 import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -78,7 +79,7 @@ const StyledProject = styled.li`
 
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
-    margin-bottom: 35px;
+    margin-bottom: 12px;
 
     .folder {
       color: var(--accent);
@@ -121,6 +122,7 @@ const StyledProject = styled.li`
   .project-description {
     color: var(--text-light);
     font-size: 17px;
+    margin: 16px 0 0;
 
     a {
       ${({ theme }) => theme.mixins.inlineLink};
@@ -158,6 +160,11 @@ const Projects = () => {
       node {
         frontmatter {
           title
+          cover {
+            childImageSharp {
+              gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
           tags
           github
           url
@@ -189,15 +196,18 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, url, title, tags } = frontmatter;
+    const { github, url, title, tags, cover } = frontmatter;
+    const image = getImage(cover);
 
     return (
       <div className="project-inner">
         <header>
           <div className="project-top">
-            <div className="folder">
-              <Icon name="Folder" />
-            </div>
+            <h3 className="project-title">
+              <a href={url} target="_blank" rel="noreferrer">
+                {title}
+              </a>
+            </h3>
             <div className="project-links">
               {github && (
                 <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
@@ -216,13 +226,7 @@ const Projects = () => {
               )}
             </div>
           </div>
-
-          <h3 className="project-title">
-            <a href={url} target="_blank" rel="noreferrer">
-              {title}
-            </a>
-          </h3>
-
+          <GatsbyImage image={image} alt={title} className="img" />
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
         <footer>
@@ -241,9 +245,9 @@ const Projects = () => {
   return (
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Projects</h2>
-      <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+      {/* <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
         view the archive
-      </Link>
+      </Link> */}
       <ul className="projects-grid">
         {prefersReducedMotion ? (
           <>
