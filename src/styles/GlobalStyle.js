@@ -100,6 +100,10 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: 100%;
   }
 
+  .accent {
+    color: var(--accent);
+  }
+
   main {
     margin: 0 auto;
     width: 100%;

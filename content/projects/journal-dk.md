@@ -1,6 +1,7 @@
 ---
 date: '2021-01-01'
-title: 'todo: add description blog/journal'
+title: 'Bookmate Journal DK'
+cover: './dk-journal-min.png'
 url: 'https://journal.bookmate.dk/'
 tags: 
   - JavaScript
@@ -8,8 +9,13 @@ tags:
   - Hugo
   - Netlify CMS
 company: 'Bookmate'
-image: './images/dk-journal-min.png'
 type: 'project'
 ---
 
-todo
+Hvad er Bookmate Journal?
+
+Bookmate Journal er et tillæg til Bookmate, der er en streamingtjeneste for e-bøger og lydbøger. Journal er stedet, hvor vi kan gå i dybden med den litteratur og de læseoplevelser, der kan findes på Bookmate.
+
+Artiklerne på Journal linker direkte til de bøger og forfattere, der skrives om, så du selv kan dykke ned i læseoplevelserne med det samme – såfremt du har abonnement på Bookmate. Indholdet på Journal er frit tilgængeligt for alle.
+
+God læselyst!

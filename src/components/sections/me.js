@@ -51,7 +51,7 @@ const Me = () => {
 
   const introItems = [
       <h1 className="heading-caption">Hi, my name is</h1>,
-      <h2 className="heading-main">Daria Diachkova.</h2>,
+      <h2 className="heading-main">Daria V. Diachkova.</h2>,
       <h3 className="subheading-main">I build things for the web.</h3>,
   ]
 

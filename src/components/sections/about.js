@@ -97,16 +97,27 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Daria and ... todo (description)
+              Hello! My name is Daria. I'm a <span className='accent'><b>senior frontend developer</b></span> & team leader based in <span className='accent'>Belgrade, Serbia</span>.
             </p>
             <p>
-              todo
+              I have developed many types of frontends from interactive dashboard applications to Ecommerce booking platforms.
+            </p>
+            <p>
+              Currently, I’m focusing on building human-centered & accessible products.
             </p>
             <p>Here are some technologies I’ve been recently working with:</p>
           </div>
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
+          <br />
+          <p>
+            <b>I speak:</b>
+            <br />
+            <b>Natively</b>: 🇬🇧 / 🇩🇪 / 🇷🇺
+            <br />
+            <b>Currently learning</b>: 🇷🇸 / 🇭🇷
+          </p>
         </StyledText>
         <StyledPic>
           <div className="wrapper">
