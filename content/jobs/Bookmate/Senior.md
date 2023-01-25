@@ -11,6 +11,6 @@ tags:
   - Redux
 ---
 
-- todo
-- todo
-- todo
+- Write modern, maintainable code for a diverse array of client and internal projects
+- Communicate with multi-disciplinary teams of engineers, producers, designers, and clients on a daily basis
+- Work with a variety of different languages, platforms, frameworks, and content management systems (JavaScript, TypeScript, React, and Netlify)

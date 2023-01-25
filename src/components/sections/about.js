@@ -110,6 +110,14 @@ const About = () => {
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
+          <br />
+          <p>
+            <b>I speak:</b>
+            <br />
+            <b>Natively</b>: 🇬🇧 / 🇩🇪 / 🇷🇺
+            <br />
+            <b>Currently learning</b>: 🇷🇸 / 🇭🇷
+          </p>
         </StyledText>
         <StyledPic>
           <div className="wrapper">
