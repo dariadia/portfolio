@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '2'
 title: 'Colour Palettes'
 cover: './sample.png'
 github: 'https://github.com/dariadia/colour-palettes'

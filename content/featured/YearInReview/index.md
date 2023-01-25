@@ -6,7 +6,7 @@ github: 'https://github.com/dariadia/year-in-review'
 url: 'https://year-in-review-xi.vercel.app/'
 tags:
   - React
-  - interactive map & graphs
+  - interactive graph
   - translated with i18n
 ---
 
