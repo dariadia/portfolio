@@ -10,4 +10,4 @@ tags:
   - translated with i18n
 ---
 
-You see a sample landing page on reading statics of a e-library service. (todo: write more)
+A sample landing page on reading statics of a e-library service. Shows the latest reading trends across the globe as well as some personal statistics for the user.

@@ -11,4 +11,4 @@ tags:
   - interactive graph
 ---
 
-This app creates colour palettes (todo: write description)
+An admin user-friendly dashboard. Includes graphs, buttons, inputs, navbars, tabs, cards, and whatnot
