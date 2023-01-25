@@ -55,7 +55,7 @@ const Contact = () => {
       <h2 className="subheading overline">What’s Next?</h2>
       <h2 className="title">Get In Touch</h2>
       <p>
-        todo: if I', looking for a job, or just say "hi"
+        Drop a line just to say "hi" – or – inquire about hiring me for a project. I usually charge per hour of work, get in touch so that we could arrange the details.
       </p>
       <a className="email-link" href={`mailto:${email}`}>
         Say Hello
