@@ -1,7 +1,7 @@
 ---
 date: '2021-01-01'
 title: 'Bookmate Journal DK'
-cover: './dk-journal-min.png'
+cover: './images//dk-journal-min.png'
 url: 'https://journal.bookmate.dk/'
 tags: 
   - JavaScript
