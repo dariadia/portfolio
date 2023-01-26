@@ -150,6 +150,7 @@ const StyledProject = styled.li`
     color: var(--text-light);
     font-size: var(--lg);
     text-align: center;
+    direction: ltr;
 
     @media (max-width: 768px) {
       padding: 20px 0;
