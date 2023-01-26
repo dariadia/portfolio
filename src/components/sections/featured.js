@@ -149,6 +149,7 @@ const StyledProject = styled.li`
     background-color: var(--complementary);
     color: var(--text-light);
     font-size: var(--lg);
+    text-align: center;
 
     @media (max-width: 768px) {
       padding: 20px 0;
@@ -178,6 +179,14 @@ const StyledProject = styled.li`
     margin: 25px 0 10px;
     padding: 0;
     list-style: none;
+    flex-direction: column;
+
+    > li > .inline-link {
+      color: white;
+      &: hover {
+        color: var(--accent);
+      }
+    }
 
     li {
       margin: 0 20px 5px 0;
