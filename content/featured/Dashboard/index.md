@@ -11,4 +11,4 @@ tags:
   - interactive graph
 ---
 
-An admin user-friendly dashboard. Includes graphs, buttons, inputs, navbars, tabs, cards, and whatnot
+An admin user-friendly dashboard. Includes interactive graphs (still, or updated at a set timeout via the API), buttons, inputs, navbars, tabs, cards, and whatnot.

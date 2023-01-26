@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -28,7 +28,7 @@ const StyledProjectsSection = styled.section`
   .projects-grid {
     ${({ theme }) => theme.mixins.listReset};
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
@@ -117,6 +117,14 @@ const StyledProject = styled.li`
         left: 0;
       }
     }
+
+    .inline-link:after {
+      display: none;
+    }
+
+    .company > .inline-link:hover {
+      color: var(--highlight);
+    }
   }
 
   .project-description {
@@ -160,6 +168,8 @@ const Projects = () => {
       node {
         frontmatter {
           title
+          company
+          company_url
           cover {
             childImageSharp {
               gatsbyImageData(width: 700, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -196,7 +206,7 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, url, title, tags, cover } = frontmatter;
+    const { github, url, title, tags, cover, company, company_url } = frontmatter;
     const image = getImage(cover);
 
     return (
@@ -207,6 +217,11 @@ const Projects = () => {
               <a href={url} target="_blank" rel="noreferrer">
                 {title}
               </a>
+              <span className="company">
+                <a href={company_url} className="inline-link">
+                  &nbsp;@{company}
+                </a>
+              </span>
             </h3>
             <div className="project-links">
               {github && (

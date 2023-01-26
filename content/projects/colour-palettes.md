@@ -1,7 +1,7 @@
 ---
-date: '2'
+date: '2023-01-01'
 title: 'Colour Palettes'
-cover: './sample.png'
+cover: './images/colour-palettes.png'
 github: 'https://github.com/dariadia/colour-palettes'
 url: 'https://colour-palettes.vercel.app/'
 tags:
