@@ -1,6 +1,6 @@
 ---
-date: '2021-01-01'
-title: 'Bookmate Journal DK'
+date: '2021'
+title: 'Bookmate Journal 🇩🇰'
 cover: './images//dk-journal-min.png'
 url: 'https://journal.bookmate.dk/'
 tags: 
@@ -9,6 +9,7 @@ tags:
   - Hugo
   - Netlify CMS
 company: 'Bookmate'
+company_url: https://bookmate.com/
 type: 'project'
 ---
 
