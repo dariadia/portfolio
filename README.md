@@ -8,7 +8,7 @@ Welcome to Daria's personal website portfolio.
 ### Prerequisites
 
 - Gatsby CLI (run `npm install -g gatsby-cli`)
-- Node v.14 (check out [NVM](https://github.com/nvm-sh/nvm))
+- Node v.18+ (check out [NVM](https://github.com/nvm-sh/nvm))
 
 Ready to go!
 
