@@ -101,21 +101,6 @@ const StyledPost = styled.li`
     margin: 0 0 10px;
     color: var(--text-light);
     font-size: var(--xxl);
-
-    a {
-      position: static;
-
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-      }
-    }
   }
 
   .project-description {
@@ -205,7 +190,7 @@ const Posts = () => {
               {slug && (
                 <a
                   href={slug}
-                  aria-label="url Link"
+                  aria-label="external link"
                   className="url"
                   target="_blank"
                   rel="noreferrer">

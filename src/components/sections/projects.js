@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -7,6 +7,7 @@ import isServer from '@constants/server-helper';
 import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import kebabCase from 'lodash/kebabCase';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -33,7 +34,7 @@ const StyledProjectsSection = styled.section`
     position: relative;
     margin-top: 50px;
 
-    @media (max-width: 1080px) {
+    @media (max-width: 900px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }
@@ -102,21 +103,6 @@ const StyledProject = styled.li`
     margin: 0 0 10px;
     color: var(--text-light);
     font-size: var(--xxl);
-
-    a {
-      position: static;
-
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-      }
-    }
 
     .inline-link:after {
       display: none;
@@ -199,10 +185,10 @@ const Projects = () => {
     revealProjects.current.forEach((ref, i) => isServer.reveal(ref, srConfig(i * 100)));
   }, [prefersReducedMotion]);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 4;
   const projects = data.projects.edges.filter(({ node }) => node);
-  const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  const first = projects.slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? projects : first;
 
   const projectInner = node => {
     const { frontmatter, html } = node;
@@ -214,14 +200,12 @@ const Projects = () => {
         <header>
           <div className="project-top">
             <h3 className="project-title">
-              <a href={url} target="_blank" rel="noreferrer">
+              <a href={url} className="url" target="_blank" rel="noreferrer">
                 {title}
               </a>
-              <span className="company">
-                <a href={company_url} className="inline-link">
-                  &nbsp;@{company}
-                </a>
-              </span>
+              <a href={company_url} rel="noreferrer" className="company inline-link">
+                &nbsp;@{company}
+              </a>
             </h3>
             <div className="project-links">
               {github && (
@@ -232,7 +216,7 @@ const Projects = () => {
               {url && (
                 <a
                   href={url}
-                  aria-label="url Link"
+                  aria-label="external link"
                   className="url"
                   target="_blank"
                   rel="noreferrer">
@@ -241,14 +225,20 @@ const Projects = () => {
               )}
             </div>
           </div>
-          <GatsbyImage image={image} alt={title} className="img" />
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         </header>
+        <a href={url} className="url" target="_blank" rel="noreferrer">
+          <GatsbyImage image={image} alt={title} className="img" />
+        </a>
+        <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         <footer>
-          {tags && (
+          {tags.length && (
             <ul className="project-tags-list">
-              {tags.map((tags, i) => (
-                <li key={i}>{tags}</li>
+              {tags.map(tag => (
+                <li key={tag.fieldValue}>
+                  <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                    {tag}
+                  </Link>
+                </li>
               ))}
             </ul>
           )}

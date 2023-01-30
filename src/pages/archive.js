@@ -191,7 +191,7 @@ const ArchivePage = ({ location, data }) => {
                       <td className="links">
                         <div>
                           {url && (
-                            <a href={url} aria-label="url Link">
+                            <a href={url} aria-label="external link">
                               <Icon name="External" />
                             </a>
                           )}

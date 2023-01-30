@@ -341,7 +341,7 @@ const Featured = () => {
                         </a>
                       )}
                       {url && (
-                        <a href={url} aria-label="url Link" className="url">
+                        <a href={url} aria-label="external link" className="url">
                           <Icon name="External" />
                         </a>
                       )}
