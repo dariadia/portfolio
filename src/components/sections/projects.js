@@ -33,7 +33,7 @@ const StyledProjectsSection = styled.section`
     position: relative;
     margin-top: 50px;
 
-    @media (max-width: 1080px) {
+    @media (max-width: 900px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
   }
@@ -199,10 +199,10 @@ const Projects = () => {
     revealProjects.current.forEach((ref, i) => isServer.reveal(ref, srConfig(i * 100)));
   }, [prefersReducedMotion]);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 4;
   const projects = data.projects.edges.filter(({ node }) => node);
-  const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  const first = projects.slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? projects : first;
 
   const projectInner = node => {
     const { frontmatter, html } = node;
@@ -214,14 +214,12 @@ const Projects = () => {
         <header>
           <div className="project-top">
             <h3 className="project-title">
-              <a href={url} target="_blank" rel="noreferrer">
+              <a href={url} className="url" target="_blank" rel="noreferrer">
                 {title}
               </a>
-              <span className="company">
-                <a href={company_url} className="inline-link">
-                  &nbsp;@{company}
-                </a>
-              </span>
+              <a href={company_url} rel="noreferrer" className="company inline-link">
+                &nbsp;@{company}
+              </a>
             </h3>
             <div className="project-links">
               {github && (
@@ -232,7 +230,7 @@ const Projects = () => {
               {url && (
                 <a
                   href={url}
-                  aria-label="url Link"
+                  aria-label="external link"
                   className="url"
                   target="_blank"
                   rel="noreferrer">
@@ -241,9 +239,9 @@ const Projects = () => {
               )}
             </div>
           </div>
+          </header>
           <GatsbyImage image={image} alt={title} className="img" />
           <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
-        </header>
         <footer>
           {tags && (
             <ul className="project-tags-list">
