@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -7,6 +7,7 @@ import isServer from '@constants/server-helper';
 import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import kebabCase from 'lodash/kebabCase';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -102,21 +103,6 @@ const StyledProject = styled.li`
     margin: 0 0 10px;
     color: var(--text-light);
     font-size: var(--xxl);
-
-    a {
-      position: static;
-
-      &:before {
-        content: '';
-        display: block;
-        position: absolute;
-        z-index: 0;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-      }
-    }
 
     .inline-link:after {
       display: none;
@@ -239,14 +225,18 @@ const Projects = () => {
               )}
             </div>
           </div>
-          </header>
-          <GatsbyImage image={image} alt={title} className="img" />
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+        </header>
+        <GatsbyImage image={image} alt={title} className="img" />
+        <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         <footer>
-          {tags && (
+          {tags.length && (
             <ul className="project-tags-list">
-              {tags.map((tags, i) => (
-                <li key={i}>{tags}</li>
+              {tags.map(tag => (
+                <li key={tag.fieldValue}>
+                  <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                    {tag}
+                  </Link>
+                </li>
               ))}
             </ul>
           )}
