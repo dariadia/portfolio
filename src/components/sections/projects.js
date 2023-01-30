@@ -226,7 +226,9 @@ const Projects = () => {
             </div>
           </div>
         </header>
-        <GatsbyImage image={image} alt={title} className="img" />
+        <a href={url} className="url" target="_blank" rel="noreferrer">
+          <GatsbyImage image={image} alt={title} className="img" />
+        </a>
         <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
         <footer>
           {tags.length && (
