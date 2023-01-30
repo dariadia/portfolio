@@ -1,7 +1,7 @@
 # What
 Welcome to Daria's personal website portfolio.
 
-[TODO deployed link](https://www.com)
+[deployed here](https://dariadia-portfolio.vercel.app/)
 
 ## To run locally:
 
