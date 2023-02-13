@@ -11,5 +11,6 @@ tags:
   - Redux
 ---
 
-- Write modern, maintainable code for internal projects
+- Write modern and maintainable code for internal projects
 - Work with a variety of different languages, platforms, frameworks, and content management systems (JavaScript, TypeScript, React, and Netlify)
+- Manage changes to source code using git
