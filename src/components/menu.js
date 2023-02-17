@@ -250,7 +250,7 @@ const Menu = () => {
                 ))}
               </ul>
             )}
-            <a href="/resume.pdf" className="resume-link">
+            <a href="/Daria_Diachkova_-_Senior_Frontend_Engineer.pdf" className="resume-link">
               Resume
             </a>
           </nav>
