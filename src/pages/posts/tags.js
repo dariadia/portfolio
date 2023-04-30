@@ -13,16 +13,16 @@ const StyledTagsContainer = styled.main`
     margin-bottom: 50px;
   }
   ul {
-    color: var(--text-light);
+    color: var(--text);
 
     li {
       font-size: var(--xxl);
 
       a {
-        color: var(--text-light);
+        color: var(--text);
 
         .count {
-          color: var(--text-light);
+          color: var(--text);
           font-family: var(--font-main);
           font-size: var(--md);
         }

@@ -85,7 +85,7 @@ const StyledPost = styled.li`
 
   .post__title {
     margin: 0 0 10px;
-    color: var(--text-light);
+    color: var(--text);
     font-size: var(--xxl);
 
     a {
@@ -105,12 +105,12 @@ const StyledPost = styled.li`
   }
 
   .post__desc {
-    color: var(--text-light);
+    color: var(--text);
     font-size: 17px;
   }
 
   .post__date {
-    color: var(--text-light);
+    color: var(--text);
     font-family: var(--font-main);
     font-size: var(--xxs);
     text-transform: uppercase;

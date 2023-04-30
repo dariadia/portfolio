@@ -74,7 +74,7 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--accent-tint);
   background-color: ${({ isActive }) => (isActive ? 'var(--complementary)' : 'transparent')};;
-  color: ${({ isActive }) => (isActive ? 'var(--accent)' : 'var(--text-light)')};
+  color: ${({ isActive }) => (isActive ? 'var(--accent)' : 'var(--text)')};
   font-family: var(--font-main);
   font-size: var(--xs);
   text-align: left;
@@ -147,7 +147,7 @@ const StyledTabPanel = styled.div`
 
   .range {
     margin-bottom: 25px;
-    color: var(--text-light);
+    color: var(--text);
     font-family: var(--font-main);
     font-size: var(--xs);
   }

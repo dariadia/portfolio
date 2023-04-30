@@ -88,7 +88,7 @@ const StyledPost = styled.li`
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--text-light);
+      color: var(--text);
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
@@ -99,12 +99,12 @@ const StyledPost = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--text-light);
+    color: var(--text);
     font-size: var(--xxl);
   }
 
   .project-description {
-    color: var(--text-light);
+    color: var(--text);
     font-size: 17px;
 
     a {

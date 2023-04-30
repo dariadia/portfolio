@@ -20,7 +20,7 @@ const StyledSocialLinks = styled.div`
     width: 100%;
     max-width: 270px;
     margin: 0 auto 10px;
-    color: var(--text-light);
+    color: var(--text);
   }
 
   ul {
@@ -36,7 +36,7 @@ const StyledSocialLinks = styled.div`
 `;
 
 const StyledCredit = styled.div`
-  color: var(--text-light);
+  color: var(--text);
   font-family: var(--font-main);
   font-size: var(--xxs);
   line-height: 1;

@@ -7,11 +7,11 @@ const variables = css`
     --complementary: ${config.colors.complementary};
     --dark-complementary: #081507;
     --accent: ${config.colors.accent};
-    --accent-tint: rgba(135,214,127, 0.1);
-    --accent-dark: rgba(70,196,70, 0.7);
+    --accent-tint: ${config.colors.accentTint};
+    --accent-dark: ${config.colors.accentDark};
     --highlight: ${config.colors.highlight};
-    --text-light: #f6fcf6;
-    --shadow-main: rgba(2, 12, 27, 0.7);
+    --text: ${config.colors.text};
+    --shadow-main: ${config.colors.shadowMain};
     --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
     --font-main: 'Work Sans', 'Roboto', monospace;
