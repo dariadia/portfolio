@@ -57,15 +57,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background-color: var(--main);
+    color: var(--text);
+    font-family: var(--font-accent);
+  }
+
+  body.dark {
+    background-color: var(--main-theme);
+    color: var(--text-theme);
+    font-family: var(--font-accent-theme);
+  }
+
+  body {
     margin: 0;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--main);
-    color: var(--text);
-    font-family: var(--font-accent);
     font-size: var(--xl);
     line-height: 1.3;
 

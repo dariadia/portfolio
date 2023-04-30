@@ -3,15 +3,24 @@ import config from '/src/config';
 
 const variables = css`
   :root {
-    --main: ${config.colorsLight.main};
-    --complementary: ${config.colorsLight.complementary};
+    --main: ${config.colors.main};
+    --complementary: ${config.colors.complementary};
     --dark-complementary: #081507;
-    --accent: ${config.colorsLight.accent};
-    --accent-tint: ${config.colorsLight.accentTint};
-    --accent-dark: ${config.colorsLight.accentDark};
-    --highlight: ${config.colorsLight.highlight};
-    --text: ${config.colorsLight.text};
-    --shadow-main: ${config.colorsLight.shadowMain};
+    --accent: ${config.colors.accent};
+    --accent-tint: ${config.colors.accentTint};
+    --accent-dark: ${config.colors.accentDark};
+    --highlight: ${config.colors.highlight};
+    --text: ${config.colors.text};
+    --shadow-main: ${config.colors.shadowMain};
+    --main-theme: ${config.colorsDark.main};
+    --complementary-theme: ${config.colorsDark.complementary};
+    --dark-complementary-theme: #081507;
+    --accent-theme: ${config.colorsDark.accent};
+    --accent-tint-theme: ${config.colorsDark.accentTint};
+    --accent-dark-theme: ${config.colorsDark.accentDark};
+    --highlight-theme: ${config.colorsDark.highlight};
+    --text-theme: ${config.colorsDark.text};
+    --shadow-main-theme: ${config.colorsDark.shadowMain};
     --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
     --font-main: 'Work Sans', 'Roboto', monospace;
