@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   ::selection {
     background-color: var(--accent-tint);
-    color: var(--text-light);
+    color: var(--text);
   }
 
   /* Provide basic, default focus styles.*/
@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     background-color: var(--main);
-    color: var(--text-light);
+    color: var(--text);
     font-family: var(--font-accent);
     font-size: var(--xl);
     line-height: 1.3;
@@ -158,7 +158,7 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--text-light);
+    color: var(--text);
     line-height: 1.1;
   }
 

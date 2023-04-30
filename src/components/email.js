@@ -17,7 +17,7 @@ const StyledLinkWrapper = styled.div`
     border: 1px dashed var(--main);
     height: 124px;
     margin: 0 auto;
-    background-color: var(--text-light);
+    background-color: var(--text);
   }
 
   a {

@@ -38,11 +38,26 @@ module.exports = {
     },
   ],
 
-  colors: {
+  colorsDark: {
     main: '#1D2330',
     complementary: '#134C63',
     accent: '#87D67F',
     highlight: '#F9F871',
+    text: '#f6fcf6',
+    accentTint: 'rgba(135,214,127, 0.1)',
+    accentDark: 'rgba(70,196,70, 0.7)',
+    shadowMain: 'rgba(2, 12, 27, 0.7)',
+  },
+
+  colors: {
+    main: 'white',
+    complementary: '#ACB1D6',
+    accent: '#566eaf',
+    highlight: '#566eaf',
+    text: '#030303',
+    accentTint: 'rgba(130, 148, 196, 0.9)',
+    accentDark: 'rgba(130, 148, 196, 0.6)',
+    shadowMain: 'rgba(130, 148, 196, 0.4)',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

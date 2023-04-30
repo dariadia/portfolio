@@ -55,7 +55,7 @@ const StyledProject = styled.li`
       flex-direction: column;
       text-align: right;
       > li > .inline-link { 
-        color: var(--text-light);
+        color: var(--text);
         &:hover {
           color: var(--accent);
         }
@@ -147,7 +147,7 @@ const StyledProject = styled.li`
     padding: 25px;
     border-radius: var(--border-radius);
     background-color: var(--complementary);
-    color: var(--text-light);
+    color: var(--text);
     font-size: var(--lg);
     text-align: center;
     direction: ltr;
@@ -191,7 +191,7 @@ const StyledProject = styled.li`
 
     li {
       margin: 0 20px 5px 0;
-      color: var(--text-light);
+      color: var(--text);
       font-family: var(--font-main);
       font-size: var(--xs);
       white-space: nowrap;
@@ -202,7 +202,7 @@ const StyledProject = styled.li`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--text-light);
+        color: var(--text);
       }
     }
   }
@@ -213,7 +213,7 @@ const StyledProject = styled.li`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color: var(--text-light);
+    color: var(--text);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};

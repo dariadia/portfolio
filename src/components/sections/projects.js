@@ -41,7 +41,7 @@ const StyledProjectsSection = styled.section`
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
+    margin: 200px auto 0;
   }
 `;
 
@@ -90,7 +90,7 @@ const StyledProject = styled.li`
       display: flex;
       align-items: center;
       margin-right: -10px;
-      color: var(--text-light);
+      color: var(--text);
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
@@ -101,7 +101,7 @@ const StyledProject = styled.li`
 
   .project-title {
     margin: 0 0 10px;
-    color: var(--text-light);
+    color: var(--text);
     font-size: var(--xxl);
 
     .inline-link:after {
@@ -114,7 +114,7 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    color: var(--text-light);
+    color: var(--text);
     font-size: 17px;
     margin: 16px 0 0;
 
