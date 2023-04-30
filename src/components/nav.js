@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -33,8 +34,8 @@ const StyledHeader = styled.header`
   @media (prefers-reduced-motion: no-preference) {
     ${props =>
     props.scrollDirection === 'up' &&
-      !props.scrolledToTop &&
-      css`
+    !props.scrolledToTop &&
+    css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: var(--main);
@@ -43,8 +44,8 @@ const StyledHeader = styled.header`
 
     ${props =>
     props.scrollDirection === 'down' &&
-      !props.scrolledToTop &&
-      css`
+    !props.scrolledToTop &&
+    css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px var(--shadow-main);
@@ -141,16 +142,30 @@ const Nav = ({ isHome }) => {
   const fadeClass = isHome ? 'fade' : '';
   const fadeDownClass = isHome ? 'fadedown' : '';
 
+  const Toggler = (<ThemeToggler>
+    {({ theme, toggleTheme }) => (
+      <label>
+        <input
+          type="checkbox"
+          onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+          checked={theme === 'dark'}
+        />{' '}
+       {theme === 'dark'? '🌚 mode': '🌝 mode'}
+      </label>
+    )}
+  </ThemeToggler>)
+
   const Logo = (
     <div className="logo" tabIndex="-1">
       {isHome ? (
-        <a href="/" aria-label="home">
-          <Icon name="ArrowUp" />
-        </a>
+        <div>{Toggler}</div>
       ) : (
-        <Link to="/" aria-label="home">
-          <Icon name="ArrowUp" />
-        </Link>
+        <>
+          <Link to="/" aria-label="home">
+            <Icon name="ArrowUp" />
+          </Link>
+          {Toggler}
+        </>
       )}
     </div>
   );

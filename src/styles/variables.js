@@ -3,15 +3,15 @@ import config from '/src/config';
 
 const variables = css`
   :root {
-    --main: ${config.colors.main};
-    --complementary: ${config.colors.complementary};
+    --main: ${config.colorsLight.main};
+    --complementary: ${config.colorsLight.complementary};
     --dark-complementary: #081507;
-    --accent: ${config.colors.accent};
-    --accent-tint: ${config.colors.accentTint};
-    --accent-dark: ${config.colors.accentDark};
-    --highlight: ${config.colors.highlight};
-    --text: ${config.colors.text};
-    --shadow-main: ${config.colors.shadowMain};
+    --accent: ${config.colorsLight.accent};
+    --accent-tint: ${config.colorsLight.accentTint};
+    --accent-dark: ${config.colorsLight.accentDark};
+    --highlight: ${config.colorsLight.highlight};
+    --text: ${config.colorsLight.text};
+    --shadow-main: ${config.colorsLight.shadowMain};
     --font-accent: 'Libre Baskerville', 'San Francisco', -apple-system, system-ui,
       sans-serif;
     --font-main: 'Work Sans', 'Roboto', monospace;

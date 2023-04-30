@@ -49,7 +49,7 @@ module.exports = {
     shadowMain: 'rgba(2, 12, 27, 0.7)',
   },
 
-  colors: {
+  colorsLight: {
     main: 'white',
     complementary: '#ACB1D6',
     accent: '#566eaf',

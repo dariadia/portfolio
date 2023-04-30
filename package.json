@@ -56,6 +56,7 @@
     "@upstatement/eslint-config": "^1.0.0",
     "@upstatement/prettier-config": "^1.0.0",
     "babel-preset-gatsby": "^3.3.1",
+    "gatsby-plugin-dark-mode": "^1.1.2",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
