@@ -24,6 +24,10 @@ const StyledHeader = styled.header`
   backdrop-filter: blur(10px);
   transition: var(--transition);
 
+  body.dark header {
+    background-color: var(--main-theme);
+  }
+
   @media (max-width: 1080px) {
     padding: 0 40px;
   }

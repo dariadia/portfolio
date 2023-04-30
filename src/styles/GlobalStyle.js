@@ -42,17 +42,18 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--dark-complementary) var(--main);
+    scrollbar-color: var(--dark-complementary-theme) var(--main-theme);
   }
+
   ::-webkit-scrollbar {
     width: 12px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--main);
+    background: var(--main-theme);
   }
   ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-complementary);
-    border: 3px solid var(--main);
+    background-color: var(--dark-complementary-theme);
+    border: 3px solid var(--main-theme);
     border-radius: 10px;
   }
 
@@ -66,6 +67,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--main-theme);
     color: var(--text-theme);
     font-family: var(--font-accent-theme);
+
+    header {
+      background-color: var(--main-theme);
+    }
   }
 
   body {

@@ -20,6 +20,11 @@ const StyledLinkWrapper = styled.div`
     background-color: var(--text);
   }
 
+  body.dark &:after {
+    border: 1px dashed var(--main-theme);
+    background-color: var(--text-theme);
+  }
+
   a {
     margin: 20px auto;
     padding: 10px;

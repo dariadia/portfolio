@@ -12,6 +12,7 @@ const variables = css`
     --highlight: ${config.colors.highlight};
     --text: ${config.colors.text};
     --shadow-main: ${config.colors.shadowMain};
+    
     --main-theme: ${config.colorsDark.main};
     --complementary-theme: ${config.colorsDark.complementary};
     --dark-complementary-theme: #081507;

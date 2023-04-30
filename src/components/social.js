@@ -21,6 +21,12 @@ const StyledSocialList = styled.ul`
     background-color: var(--accent);
     border: 1px dashed var(--main);
   }
+
+  body.dark &:after {
+    background-color: var(--accent-theme);
+    border: 1px dashed var(--main-theme);
+  }
+
   li {
     &:last-of-type {
       margin-bottom: 20px;
