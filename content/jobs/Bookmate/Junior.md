@@ -9,8 +9,13 @@ url: 'https://www.bookmate.com/'
 tags:
   - React
   - Redux
+  - JavaScript
+  - TypeScript 
+  - Netlify
 ---
 
-- Write modern and maintainable code for internal projects
-- Work with a variety of different languages, platforms, frameworks, and content management systems (JavaScript, TypeScript, React, and Netlify)
-- Manage changes to source code using git
+- Write modern and maintainable code for <b>internal</b> projects. 
+- Implement designs: <b>from design mockups to web pages using HTML, CSS, and JavaScript</b>. Ensure that the design is accurately translated into code while maintaining responsiveness and cross-browser compatibility.
+- Work with a variety of different languages, platforms, frameworks, and content management systems (<b>JavaScript, TypeScript, React, and Netlify</b>)
+- Manage changes to source code using <b>git</b>
+

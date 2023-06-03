@@ -97,23 +97,31 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Daria. I'm a <span className='accent'><b>senior frontend developer</b></span> & team leader based in <span className='accent'>Belgrade, Serbia</span>.
+              Hi! My name is Daria.
+            </p>
+            <p> I'm a <span className='accent'>5+ years of experience <b>senior frontend developer</b></span> & team leader based in Belgrade, Serbia.
             </p>
             <p>
-              I have developed many types of frontends from interactive dashboard applications to Ecommerce booking platforms.
+              I have a passion for crafting <span className='accent'><b>beautiful and intuitive user interfaces</b></span>. Among my projects are many types of frontends from interactive dashboard applications to e-commerce booking platforms. With 5 years in the field, I've honed my skills in creating engaging web applications that provide <span className='accent'><b>exceptional and inclusive user experiences.</b></span>
             </p>
+            {/* <p>
+              Throughout my career, I've had the opportunity to work on a wide range of projects (small startups to large-scale enterprise). This <span className='accent'><b>diverse experience</b></span> has given me a deep understanding of the entire frontend development lifecycle, from conceptualization and wireframing to implementation and optimization. 
+            </p> */}
             <p>
-              Currently, I’m focusing on building human-centered & accessible products.
+              Currently, I’m focusing on building <span className='accent'><b>inclusive & accessible </b></span>products.
             </p>
-            <p>Here are some technologies I’ve been recently working with:</p>
+            <br />
+            <br />
+            <h3><b>Here are some technologies I’ve been recently working with:</b></h3>
           </div>
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
           <br />
+          <br />
           <p>
             <b>I speak:</b>
-            <br />
+            <br /> <br />
             <b>Natively</b>: 🇬🇧 / 🇩🇪 / 🇷🇺
             <br />
             <b>Fluent</b>: 🇷🇸 / 🇭🇷
