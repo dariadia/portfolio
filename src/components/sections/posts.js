@@ -62,6 +62,10 @@ const StyledPost = styled.li`
     z-index: 1;
   }
 
+  .url > .fa-solid {
+    margin-right: 8px;
+  }
+    
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
     ${({ theme }) => theme.mixins.flexBetween};
@@ -146,6 +150,7 @@ const Posts = () => {
           tags
           slug
           description
+          task
         }
         html
       }
@@ -174,18 +179,12 @@ const Posts = () => {
 
   const postInner = node => {
     const { frontmatter } = node;
-    const { slug, title, description, tags } = frontmatter;
+    const { slug, title, description, tags, task } = frontmatter;
 
     return (
       <div className="project-inner">
         <header>
           <div className="project-top">
-            <div className="folder">
-              <Icon name="Folder" />
-            </div>
-            <a href={slug} target="_blank" rel="noreferrer">
-              {title}
-            </a>
             <div className="project-links">
               {slug && (
                 <a
@@ -195,11 +194,13 @@ const Posts = () => {
                   target="_blank"
                   rel="noreferrer">
                   <Icon name="url" />
+                  <b>{title}</b>
                 </a>
               )}
             </div>
           </div>
-          <div className="project-description">{description}</div>
+          <p className="project-description">{description}</p>
+          <p className="project-description">{task}</p>
         </header>
         <footer>
           {tags && (
@@ -214,47 +215,46 @@ const Posts = () => {
     );
   };
 
-  return ( null
-    // <StyledPostsSection>
-    //   <h2 ref={revealTitle}>Blog Posts</h2>
-    //   <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-    //     view the archive
-    //   </Link>
-    //   <ul className="posts-grid">
-    //     {prefersReducedMotion ? (
-    //       <>
-    //         {postsToShow &&
-    //           postsToShow.map(({ node }, i) => (
-    //             <StyledPost key={i}>{postInner(node)}</StyledPost>
-    //           ))}
-    //       </>
-    //     ) : (
-    //       <TransitionGroup component={null}>
-    //         {postsToShow &&
-    //           postsToShow.map(({ node }, i) => (
-    //             <CSSTransition
-    //               key={i}
-    //               classNames="fadeup"
-    //               timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-    //               exit={false}>
-    //               <StyledPost
-    //                 key={i}
-    //                 ref={el => (revealPosts.current[i] = el)}
-    //                 style={{
-    //                   transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-    //                 }}>
-    //                 {postInner(node)}
-    //               </StyledPost>
-    //             </CSSTransition>
-    //           ))}
-    //       </TransitionGroup>
-    //     )}
-    //   </ul>
+  return (<StyledPostsSection>
+    <h2 ref={revealTitle}>Blog Posts</h2>
+    <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+      view the archive
+    </Link>
+    <ul className="posts-grid">
+      {prefersReducedMotion ? (
+        <>
+          {postsToShow &&
+            postsToShow.map(({ node }, i) => (
+              <StyledPost key={i}>{postInner(node)}</StyledPost>
+            ))}
+        </>
+      ) : (
+        <TransitionGroup component={null}>
+          {postsToShow &&
+            postsToShow.map(({ node }, i) => (
+              <CSSTransition
+                key={i}
+                classNames="fadeup"
+                timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
+                exit={false}>
+                <StyledPost
+                  key={i}
+                  ref={el => (revealPosts.current[i] = el)}
+                  style={{
+                    transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
+                  }}>
+                  {postInner(node)}
+                </StyledPost>
+              </CSSTransition>
+            ))}
+        </TransitionGroup>
+      )}
+    </ul>
 
-    //   <button className="more-button" onClick={() => setShowMore(!showMore)}>
-    //     Show {showMore ? 'Less' : 'More'}
-    //   </button>
-    // </StyledPostsSection>
+    <button className="more-button" onClick={() => setShowMore(!showMore)}>
+      Show {showMore ? 'Less' : 'More'}
+    </button>
+  </StyledPostsSection>
   );
 };
 

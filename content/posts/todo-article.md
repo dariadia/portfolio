@@ -1,11 +1,13 @@
 ---
-title: 'Some post about something'
-description: 'This does this'
-date: '2022-04-21'
-slug: '/posts/todo-article'
+title: 'The Algorithm Series: Add Binary'
+description: 'Explaining how to solve algorithm tasks (via Leetcode).'
+task: 'Given two binary strings a and b, return their sum as a binary string.'
+date: '2023-04-10'
+slug: '/posts/add-binary'
 type: 'post'
 tags:
-  - CSS
+  - algorithm
+  - leetcode
 ---
 
 # What
