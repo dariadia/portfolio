@@ -1,6 +1,6 @@
 ---
 date: '2021'
-title: 'Bookmate Journal 🇩🇰'
+title: 'Bookmate Journal (literary journal) 🇩🇰'
 cover: './images/dk-journal-min.png'
 url: 'https://journal.bookmate.dk/'
 tags: 
