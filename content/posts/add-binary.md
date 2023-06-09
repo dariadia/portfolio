@@ -7,6 +7,7 @@ slug: '/posts/add-binary'
 type: 'post'
 tags:
   - algorithm
+  - maths
   - leetcode
 ---
 

@@ -147,14 +147,14 @@ const PostsPage = ({ location, data }) => {
         <header>
           <h1 className="heading-main">Posts</h1>
           <p className="subtitle">
-            a collection
+            a collection of coding articles
           </p>
         </header>
         <StyledGrid>
           {posts.length > 0 &&
             posts.map(({ node }, i) => {
               const { frontmatter } = node;
-              const { title, description, slug, date, tags } = frontmatter;
+              const { title, description, slug, date, tags, task } = frontmatter;
               const formattedDate = new Date(date).toLocaleDateString();
 
               return (
@@ -168,6 +168,7 @@ const PostsPage = ({ location, data }) => {
                         <Link to={slug}>{title}</Link>
                       </h5>
                       <p className="post__desc">{description}</p>
+                      <p className="post__desc">{task}</p>
                     </header>
 
                     <footer>
@@ -204,6 +205,7 @@ export const pageQuery = graphql`{
         frontmatter {
           title
           description
+          task
           slug
           date
           tags
