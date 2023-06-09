@@ -1,6 +1,6 @@
 ---
 date: '2020'
-title: 'Bookmate Zurnal 🇷🇸'
+title: 'Bookmate Zurnal (literary journal) 🇷🇸'
 cover: './images/zurnal.png'
 url: 'https://zurnal.bookmate.com/'
 tags: 
