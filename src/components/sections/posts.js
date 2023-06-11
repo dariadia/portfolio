@@ -199,7 +199,6 @@ const Posts = () => {
               )}
             </div>
           </div>
-          <p className="project-description">{description}</p>
           <p className="project-description">{task}</p>
         </header>
         <footer>
