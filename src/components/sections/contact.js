@@ -55,7 +55,7 @@ const Contact = () => {
       <h2 className="subheading overline">What’s Next?</h2>
       <h2 className="title">Get In Touch</h2>
       <p>
-        Drop a line just to say "hi" – or – inquire about hiring me for a project. I usually charge per hour of work, get in touch so that we could arrange the details.
+        Drop a line just to say "hi" – or – inquire about hiring me for a project or as a tutor.
       </p>
       <a className="email-link" href={`mailto:${email}`}>
         Say Hello
