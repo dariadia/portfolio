@@ -172,7 +172,7 @@ const Posts = () => {
     revealPosts.current.forEach((ref, i) => isServer.reveal(ref, srConfig(i * 100)));
   }, [prefersReducedMotion]);
 
-  const GRID_LIMIT = 6;
+  const GRID_LIMIT = 4;
   const posts = data.posts.edges.filter(({ node }) => node);
   const firstSix = posts.slice(0, GRID_LIMIT);
   const postsToShow = showMore ? posts : firstSix;
