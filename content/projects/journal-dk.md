@@ -16,7 +16,3 @@ type: 'project'
 "Bookmate Journal" is written in Danish. An editorial team from Copenhagen updates the news feed. All articles are then rendered on web using the pre-set rails and mechanics, which I've implemented.
 
 Hvad er Bookmate Journal? Bookmate Journal er et tillæg til Bookmate, der er en streamingtjeneste for e-bøger og lydbøger. Journal er stedet, hvor vi kan gå i dybden med den litteratur og de læseoplevelser, der kan findes på Bookmate.
-
-Artiklerne på Journal linker direkte til de bøger og forfattere, der skrives om, så du selv kan dykke ned i læseoplevelserne med det samme – såfremt du har abonnement på Bookmate. Indholdet på Journal er frit tilgængeligt for alle.
-
-God læselyst!

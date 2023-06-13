@@ -179,7 +179,7 @@ const Posts = () => {
 
   const postInner = node => {
     const { frontmatter } = node;
-    const { slug, title, description, tags, task } = frontmatter;
+    const { slug, title, tags, task } = frontmatter;
 
     return (
       <div className="project-inner">

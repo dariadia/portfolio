@@ -1,5 +1,5 @@
 ---
-date: '2023'
+date: '2023-06-01'
 title: 'I To Je U Redu (landing) 🇷🇸'
 cover: './images/itoheuredu.png'
 url: 'https://sr.bookmate.com/original/itojeuredu'

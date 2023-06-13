@@ -4,6 +4,7 @@ title: 'Colour Palettes'
 cover: './images/colour-palettes.png'
 github: 'https://github.com/dariadia/colour-palettes'
 url: 'https://colour-palettes.vercel.app/'
+type: 'project'
 tags:
   - JavaScript
   - HTML5
