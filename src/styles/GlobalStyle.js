@@ -188,8 +188,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 10px 0 40px;
     width: 100%;
     font-size: clamp(26px, 5vw, var(--heading));
-    white-space: nowrap;
-
     &:before {
       position: relative;
       bottom: 4px;

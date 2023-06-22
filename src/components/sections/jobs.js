@@ -29,17 +29,15 @@ const StyledTabList = styled.div`
   margin: 0;
   list-style: none;
   @media (max-width: 600px) {
-    display: flex;
-    overflow-x: auto;
-    width: calc(100% + 100px);
+    overflow-x: hidden;
+    width: calc(100% - 32px);
     padding-left: 50px;
-    margin-left: -50px;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+    padding: 0;
   }
   @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
+    width: calc(100% - 32px);
+    margin: 0 auto 30px;
   }
 
   li {
