@@ -100,7 +100,7 @@ const StyledProject = styled.li`
   }
 
   .project-title {
-    margin: 0 0 10px;
+    margin: 0;
     color: var(--text);
     font-size: var(--xxl);
 
