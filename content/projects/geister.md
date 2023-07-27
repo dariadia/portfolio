@@ -2,10 +2,13 @@
 date: '2023'
 title: 'Geister (RPG)'
 cover: './images/geister.png'
+github: 'https://github.com/dariadia/library-rpg'
 url: 'https://geister-teal.vercel.app/'
 tags: 
   - JavaScript
   - Canvas
+company: 'myself'
+company_url: https://github.com/dariadia/
 type: 'project'
 ---
 
