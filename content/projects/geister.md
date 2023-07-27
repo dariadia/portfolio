@@ -1,5 +1,5 @@
 ---
-date: '2023'
+date: '2023-07-01'
 title: 'Geister (RPG)'
 cover: './images/geister.png'
 github: 'https://github.com/dariadia/library-rpg'
