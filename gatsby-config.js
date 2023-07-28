@@ -5,8 +5,8 @@ module.exports = {
     title: 'Daria Diachkova',
     description:
       'Daria Diachkova is a software engineer. Senior Frontend developer. Team Leader. Coding enthusiast.',
-    siteUrl: 'https://www.todo.com',
-    image: 'https://www.todo.com./some.png',
+    siteUrl: 'https://dariadia-portfolio.vercel.app/',
+    image: '/og.png',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
