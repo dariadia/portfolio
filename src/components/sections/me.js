@@ -39,7 +39,7 @@ const StyledMeSection = styled.section`
 `;
 
 const Me = () => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
