@@ -42,9 +42,9 @@ const Me = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const introItems = [
-      <h1 className="heading-caption">Hi, my name is</h1>,
-      <h2 className="heading-main">Daria V. Diachkova.</h2>,
-      <h3 className="subheading-main">I build things for the web.</h3>,
+    <h1 className="heading-caption">Hi, my name is</h1>,
+    <h2 className="heading-main">Daria V. Diachkova.</h2>,
+    <h3 className="subheading-main">I build things for the web.</h3>,
   ]
 
   return (
@@ -57,12 +57,11 @@ const Me = () => {
         </>
       ) : (
         <TransitionGroup component={null}>
-          {isMounted &&
-            introItems.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={LOAD_DEPLAY}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
-            ))}
+          {introItems.map((item, i) => (
+            <CSSTransition key={i} classNames="fadeup" timeout={LOAD_DEPLAY}>
+              <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+            </CSSTransition>
+          ))}
         </TransitionGroup>
       )}
     </StyledMeSection>
