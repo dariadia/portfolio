@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
+    'gatsby-plugin-remove-console',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
