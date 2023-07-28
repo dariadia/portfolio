@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { NAV_DELAY, LOAD_DEPLAY } from '@constants';
-import { usePrefersReducedMotion } from '@hooks';
+import { LOAD_DEPLAY } from '@constants';
 
 const StyledMeSection = styled.section`
   ${({ theme }) => theme.mixins.flexCentered};
@@ -39,16 +38,6 @@ const StyledMeSection = styled.section`
 `;
 
 const Me = () => {
-  const [isMounted, setIsMounted] = useState(true);
-  const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (prefersReducedMotion) return;
-
-    // const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
-    // return () => clearTimeout(timeout);
-  }, [prefersReducedMotion]);
-
   const introItems = [
       <h1 className="heading-caption">Hi, my name is</h1>,
       <h2 className="heading-main">Daria V. Diachkova.</h2>,
@@ -65,7 +54,7 @@ const Me = () => {
         </>
       ) : (
         <TransitionGroup component={null}>
-          {isMounted &&
+          {
             introItems.map((item, i) => (
               <CSSTransition key={i} classNames="fadeup" timeout={LOAD_DEPLAY}>
                 <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
