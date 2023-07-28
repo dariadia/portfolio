@@ -4,6 +4,7 @@ title: 'Year In Review'
 cover: './sample.png'
 github: 'https://github.com/dariadia/year-in-review'
 url: 'https://year-in-review-xi.vercel.app/'
+slug: 'https://year-in-review-xi.vercel.app/'
 tags:
   - React
   - interactive graph

@@ -41,7 +41,6 @@ const StyledMeSection = styled.section`
 const Me = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-  console.log(prefersReducedMotion)
 
   useEffect(() => {
     if (prefersReducedMotion) return;

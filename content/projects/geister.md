@@ -4,6 +4,7 @@ title: 'Geister (RPG)'
 cover: './images/geister.png'
 github: 'https://github.com/dariadia/library-rpg'
 url: 'https://geister-teal.vercel.app/'
+slug: 'https://geister-teal.vercel.app/'
 tags: 
   - JavaScript
   - Canvas

@@ -2,6 +2,7 @@
 date: '2023-06-01'
 title: 'I To Je U Redu (landing) 🇷🇸'
 cover: './images/itoheuredu.png'
+slug: 'https://sr.bookmate.com/original/itojeuredu'
 url: 'https://sr.bookmate.com/original/itojeuredu'
 tags: 
   - React

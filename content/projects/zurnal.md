@@ -2,6 +2,7 @@
 date: '2020'
 title: 'Bookmate Zurnal (literary journal) 🇷🇸'
 cover: './images/zurnal.png'
+slug: 'https://zurnal.bookmate.com/'
 url: 'https://zurnal.bookmate.com/'
 tags: 
   - JavaScript
