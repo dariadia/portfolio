@@ -45,8 +45,8 @@ const Me = () => {
   useEffect(() => {
     if (prefersReducedMotion) return;
 
-    const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
+    // return () => clearTimeout(timeout);
   }, [prefersReducedMotion]);
 
   const introItems = [
