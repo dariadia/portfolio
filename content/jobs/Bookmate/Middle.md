@@ -5,6 +5,7 @@ company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'February 2021 - January 2022'
 year: 2021
+slug: middle-dev
 url: 'https://www.bookmate.com/'
 tags:
   - React

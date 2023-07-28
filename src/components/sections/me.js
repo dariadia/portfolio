@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { NAV_DELAY, LOAD_DEPLAY } from '@constants';
+import { LOAD_DEPLAY } from '@constants';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledMeSection = styled.section`
@@ -39,15 +39,7 @@ const StyledMeSection = styled.section`
 `;
 
 const Me = () => {
-  const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
-
-  useEffect(() => {
-    if (prefersReducedMotion) return;
-
-    const timeout = setTimeout(() => setIsMounted(true), NAV_DELAY);
-    return () => clearTimeout(timeout);
-  }, [prefersReducedMotion]);
 
   const introItems = [
       <h1 className="heading-caption">Hi, my name is</h1>,

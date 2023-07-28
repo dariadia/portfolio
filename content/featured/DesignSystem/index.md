@@ -4,6 +4,7 @@ title: 'Design System'
 cover: './sample.png'
 github: 'https://github.com/dariadia/daria-s-design-system'
 url: 'https://daria-s-design-system.vercel.app/'
+slug: 'https://daria-s-design-system.vercel.app/'
 tags:
 - React
 - Styled System

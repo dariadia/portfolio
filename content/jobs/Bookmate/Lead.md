@@ -5,6 +5,7 @@ company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'August 2022 - now'
 year: 2022
+slug: lead-dev
 url: 'https://www.bookmate.com/'
 tags:
   - React

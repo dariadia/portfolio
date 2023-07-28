@@ -73,7 +73,7 @@ const TagTemplate = ({ pageContext, data, location }) => {
                 </h2>
                 <p className="subtitle">
                   <time>
-                    {new Date(date).toLocaleDateString('en-US', {
+                    {new Date(date).toLocaleDateString('en-GB', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',

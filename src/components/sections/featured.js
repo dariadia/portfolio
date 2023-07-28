@@ -60,7 +60,6 @@ const StyledProject = styled.li`
       flex-direction: column;
       text-align: right;
       > li > .inline-link { 
-        color: var(--text);
         &:hover {
           color: var(--accent);
         }
@@ -188,7 +187,7 @@ const StyledProject = styled.li`
     flex-direction: column;
 
     > li > .inline-link {
-      color: white;
+      color: var(--text);
       &: hover {
         color: var(--accent);
       }
@@ -331,7 +330,7 @@ const Featured = () => {
                     {tags.length && (
                       <ul className="project-tags-list">
                         {tags.map(tag => (
-                          <li key={tag.fieldValue}>
+                          <li key={tag}>
                             <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
                               {tag}
                             </Link>

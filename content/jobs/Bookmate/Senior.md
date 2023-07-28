@@ -5,6 +5,7 @@ company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'January 2022 - August 2022'
 year: 2022
+slug: senior-dev
 url: 'https://www.bookmate.com/'
 tags:
   - React

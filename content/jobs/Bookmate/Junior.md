@@ -5,6 +5,7 @@ company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'February 2020 - February 2021'
 year: 2020
+slug: junior-dev
 url: 'https://www.bookmate.com/'
 tags:
   - React

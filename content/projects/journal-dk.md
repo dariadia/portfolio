@@ -3,6 +3,7 @@ date: '2021'
 title: 'Bookmate Journal (literary journal) 🇩🇰'
 cover: './images/dk-journal-min.png'
 url: 'https://journal.bookmate.dk/'
+slug: 'https://journal.bookmate.dk/'
 tags: 
   - JavaScript
   - SCSS
