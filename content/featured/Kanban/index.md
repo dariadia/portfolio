@@ -1,7 +1,7 @@
 ---
-date: '2023-08-05'
+date: '0'
 title: 'Kanban board'
-cover: './images/kanban.png'
+cover: './kanban.png'
 url: 'https://kanban-sooty-nine.vercel.app/'
 slug: 'https://kanban-sooty-nine.vercel.app/'
 github: https://github.com/dariadia/kanban
@@ -13,4 +13,12 @@ company_url: https://github.com/dariadia/
 type: 'project'
 ---
 
-A simple kanban board: add/edit/delete tasks, add/edit/delete columns, drag and drop items around. 
+A simple **Kanban board**: 
+  - add, edit, delete tasks and columns;
+  - drag and drop items around. 
+
+<br />
+
+**Second tab**: sample banking.
+  - add/edit/delete transactions;
+  - monitor the total operations count, value and statuses.

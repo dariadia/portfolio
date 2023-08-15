@@ -126,7 +126,7 @@ const About = () => {
             <br />
             <b>Fluent</b>: 🇷🇸 / 🇭🇷
             <br />
-            <b>Currently learning</b>: 🇮🇪
+            <b>Currently learning</b>: 🇯🇵
           </p>
         </StyledText>
         <StyledPic>

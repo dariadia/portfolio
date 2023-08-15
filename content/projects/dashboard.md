@@ -1,7 +1,7 @@
 ---
-date: '1'
+date: '01-01-2023'
 title: 'Dashboard'
-cover: './sample.png'
+cover: './images/dashboard.png'
 github: 'https://github.com/dariadia/dashboard-sample'
 url: 'https://dashboard-sample-pi.vercel.app/'
 slug: 'https://dashboard-sample-pi.vercel.app/'
