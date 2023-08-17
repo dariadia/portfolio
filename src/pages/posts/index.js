@@ -23,7 +23,6 @@ const StyledMainContainer = styled.main`
   }
 
   footer {
-    ${({ theme }) => theme.mixins.flexBetween};
     width: 100%;
     margin-top: 20px;
   }
@@ -145,7 +144,7 @@ const PostsPage = ({ location, data }) => {
       <Helmet title="Posts" />
       <StyledMainContainer>
         <header>
-          <h1 className="heading-main">Posts</h1>
+          <h1 className="heading-main">Blog Posts</h1>
           <p className="subtitle">
             a collection of coding articles
           </p>

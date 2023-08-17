@@ -53,10 +53,6 @@ const TagTemplate = ({ pageContext, data, location }) => {
     <Layout location={location}>
       <Helmet title={`Tagged: #${tag}`} />
       <StyledTagsContainer>
-        <span className="breadcrumb">
-          <span className="arrow">&larr;</span>
-          <Link to="/posts">All memories</Link>
-        </span>
         <h1>
           <span>#{tag}</span>
           <span>

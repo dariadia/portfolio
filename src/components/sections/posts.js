@@ -216,7 +216,7 @@ const Posts = () => {
 
   return (<StyledPostsSection id="posts">
     <h2 ref={revealTitle}>Blog Posts</h2>
-    <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+    <Link className="inline-link archive-link" to="/posts" ref={revealArchiveLink}>
       view the archive
     </Link>
     <ul className="posts-grid">
