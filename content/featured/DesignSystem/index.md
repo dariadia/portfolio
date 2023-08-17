@@ -1,5 +1,5 @@
 ---
-date: '2'
+date: '1'
 title: 'Design System'
 cover: './sample.png'
 github: 'https://github.com/dariadia/daria-s-design-system'
