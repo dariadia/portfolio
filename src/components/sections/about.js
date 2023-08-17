@@ -5,7 +5,7 @@ import { srConfig } from '@config';
 import isServer from '@constants/server-helper';
 import { usePrefersReducedMotion } from '@hooks';
 
-const StyledLangSection =  styled.section`
+const StyledLangSection = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding: 0;
@@ -43,6 +43,13 @@ const StyledLangSection =  styled.section`
     margin: 20px 0 0 0;
     overflow: hidden;
     list-style: none;
+
+    .flag-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 24px;
+      border: 0.5px solid grey;
+    }
 
     li {
       position: relative;
@@ -125,21 +132,21 @@ const About = () => {
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="subheading">About Me</h2>
       <div className="inner">
-          <div>
-            <p>
-              Hi! My name is Daria.
-            </p>
-            <p>
+        <div>
+          <p>
+            Hi! My name is Daria.
+          </p>
+          <p>
             <b><span className='accent'>UX and inclusivity-focused</span></b> Senior Frontend Engineer and small team Frontend Lead (≤5 team members) with 5+ years of experience in <b>React, Node.js and TypeScript</b>.
-            </p>
-            <p>
-              My communication skills allow me to efficiently collaborate with development & design teams, as well as taking on mentoring duties.
-            </p>
-            <p>
-              Dedicated and enthusiastic, I am a lifelong learner whose heart belongs equally to the books (especially fantasy titles!) and the great outdoors (hiking is my passion). 
-            </p>
-            <br />
-          </div>
+          </p>
+          <p>
+            My communication skills allow me to efficiently collaborate with development & design teams, as well as taking on mentoring duties.
+          </p>
+          <p>
+            Dedicated and enthusiastic, I am a lifelong learner whose heart belongs equally to the books (especially fantasy titles!) and the great outdoors (hiking is my passion).
+          </p>
+          <br />
+        </div>
         <StyledPic>
           <div className="wrapper">
             <StaticImage
@@ -154,15 +161,59 @@ const About = () => {
         </StyledPic>
       </div>
       <StyledLangSection>
-            <ul className="skills-list">
-              {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-            </ul>
-            <ul className="languages-list">
-              <li><b>Natively</b>: 🇬🇧 / 🇩🇪 / 🇷🇺</li>
-              <li><b>Fluent</b>: 🇷🇸 / 🇭🇷</li>
-              <li><b>Currently learning</b>: 🇯🇵</li>
-            </ul>
-          </StyledLangSection>
+        <ul className="skills-list">
+          {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
+        </ul>
+        <ul className="languages-list">
+          <li><b>Natively</b>:
+          {' '}<StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/gb.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="English flag" /> /{' '}
+            <StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/de.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="German flag"
+            /> /{' '}
+            <StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/ru.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Russian flag"
+            />
+          </li>
+          <li><b>Fluent</b>:
+          {' '}<StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/rs.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Serbian flag"
+            /> /{' '}
+            <StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/hr.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Croatian flag"
+            />
+          </li>
+          <li><b>Currently learning</b>:
+          {' '}<StaticImage
+              className="img flag-icon"
+              src="../../assets/icons/jp.svg"
+              quality={95}
+              formats={['AUTO', 'WEBP', 'AVIF']}
+              alt="Japanese flag"
+            />
+          </li>
+        </ul>
+      </StyledLangSection>
     </StyledAboutSection>
   );
 };

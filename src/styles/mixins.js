@@ -54,8 +54,6 @@ const mixins = {
 
   inlineLink: css`
     display: inline-block;
-    text-decoration: none;
-    text-decoration-skip-ink: auto;
     position: relative;
     transition: var(--transition);
     color: var(--accent);
@@ -64,9 +62,6 @@ const mixins = {
     &:active {
       color: var(--accent);
       outline: 0;
-      &:after {
-        width: 100%;
-      }
       & > * {
         color: var(--accent) !important;
         transition: var(--transition);

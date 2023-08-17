@@ -204,8 +204,8 @@ const Posts = () => {
         <footer>
           {tags && (
             <ul className="project-tags-list">
-              {tags.map((tags, i) => (
-                <li key={i}>{tags}</li>
+              {tags.map((tag, i) => (
+                <li key={i}>#{tag}</li>
               ))}
             </ul>
           )}
