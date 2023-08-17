@@ -21,5 +21,7 @@ tags:
 
 ### Some stats
 
-- Introduced WCAG principles (accessibility for all);
+- Raised and mentoured: 1 junior to middle developer, one intern to junior developer. Two junior developers. 
+- Introduced <b>WCAG</b> principles (accessibility for all);
 - Improved <a href="https://bookmate.com/" target="_blank" style="color:#566eaf">bookmate.com</a> loading time by <b>153%</b>. Chunks refactoring, a combination of async/defer fetching and improved runtime for better UX.
+- Launched <b>two major game-changing features</b> for the product: a new async purchase mechanism, and option to pay via Apple/Google pay. (Before users could only manually enter their card details)
