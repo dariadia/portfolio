@@ -33,6 +33,10 @@ module.exports = {
       url: '/#projects',
     },
     {
+      name: 'Posts',
+      url: '/#posts',
+    },
+    {
       name: 'Contact',
       url: '/#contact',
     },
