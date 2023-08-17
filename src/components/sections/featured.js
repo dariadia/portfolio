@@ -30,9 +30,6 @@ const StyledProject = styled.li`
   &:nth-child(2) {
     direction: rtl;
   }
-  @media (max-width: 768px) {
-    ${({ theme }) => theme.mixins.boxShadow};
-  }
 
   &:not(:last-of-type) {
     margin-bottom: 100px;
@@ -145,7 +142,6 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    ${({ theme }) => theme.mixins.boxShadow};
     position: relative;
     z-index: 2;
     padding: 25px;
@@ -226,7 +222,6 @@ const StyledProject = styled.li`
   }
 
   .project-image {
-    ${({ theme }) => theme.mixins.boxShadow};
     position: relative;
     z-index: 1;
 
@@ -253,7 +248,7 @@ const StyledProject = styled.li`
     .img {
       border-radius: var(--border-radius);
       mix-blend-mode: multiply;
-      filter: grayscale(100%) brightness(90%) drop-shadow(-8px -8px 12px var(--accent-dark));
+      filter: grayscale(100%) brightness(90%);
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
