@@ -143,7 +143,7 @@ const About = () => {
             My communication skills allow me to efficiently collaborate with development & design teams, as well as taking on mentoring duties.
           </p>
           <p>
-            Dedicated and enthusiastic, I am a lifelong learner whose heart belongs equally to the books (especially fantasy titles!) and the great outdoors (hiking is my passion).
+            Dedicated and enthusiastic, I am a lifelong learner whose heart belongs equally to books (reading and also writing my own fiction!) and the great outdoors (a 37km hike is a breeze).
           </p>
           <br />
         </div>
@@ -151,7 +151,7 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/daria.jpeg"
+              src="../../assets/images/daria.jpeg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
