@@ -236,7 +236,7 @@ const Projects = () => {
               {tags.map(tag => (
                 <li key={tag}>
                   <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
-                    {tag}
+                    #{tag}
                   </Link>
                 </li>
               ))}

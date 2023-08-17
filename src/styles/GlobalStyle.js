@@ -138,7 +138,7 @@ const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 48px 0;
     max-width: 1000px;
 
     @media (max-width: 768px) {
@@ -294,7 +294,7 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 30px;
         margin-bottom: 10px;
         &:before {
-          content: '❯';
+          content: '֯✦';
           position: absolute;
           left: 0;
           color: var(--accent);

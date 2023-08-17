@@ -13,15 +13,15 @@ tags:
 ---
 
 - <b>Team management</b>: provide <i>leadership, mentorship, and guidance</i> to the frontend development team. Foster a collaborative and inclusive team culture, encouraging creativity, innovation, and professional growth. Delegate tasks, set goals, and provide regular feedback to team members.
+- <b>Technical expertise</b>: bring my strong frontend development skills to the team, serving as a technical advisor and providing guidance on complex technical challenges while partaking in daily tasks as the <b>"player-coach"</b>
 - <b>Project planning and coordination</b>: collaborate with project managers and stakeholders to plan and prioritize frontend development tasks. <i>Break down projects into manageable tasks</i> and <i>allocate resources effectively</i>. Ensure that timelines are met and deliverables are of high quality.
-- <b>Technical expertise</b>: bring my strong frontend development skills to the team, serving as a technical advisor and providing guidance on complex technical challenges while partaking in daily tasks as the "player-coach"
-- <b>Problem solving</b>: Demonstrate problem-solving skills by identifying and resolving technical challenges encountered during development. Analyze issues, propose solutions, and implement fixes to ensure the smooth functioning of the application.
 - <b>Collaboration with other teams</b>: work closely with backend developers, UI/UX designers, and other cross-functional teams to ensure seamless integration of frontend and backend systems. <i>Foster effective communication and collaboration</i> to align the frontend development efforts with overall project goals.
-- <b>Collaboration and communication</b>: communicate effectively with team members and stakeholders, seeking clarification when needed and providing updates on progress and challenges. Contribute actively to team discussions and brainstorming sessions on a daily basis.
-- Write modern, maintainable code for a diverse array of <b>client and internal</b> projects
-- Implement designs: <b>from design mockups to web pages using HTML, CSS, and JavaScript</b>. Ensure that the design is accurately translated into code while maintaining responsiveness and cross-browser compatibility.
-- <b>User experience</b>: collaborate with designers to create user-friendly and intuitive interfaces. Ensure a seamless and engaging user experience by implementing smooth transitions, animations, and interactive elements.
-- Work with a variety of different languages, platforms, frameworks, and content management systems (<b>JavaScript, TypeScript, React</b>) 
-- <b>Testing and debugging</b>: perform thorough testing and debugging to identify and resolve frontend issues, ensuring a bug-free and reliable user experience. Utilize debugging tools and techniques to troubleshoot and optimize code.
-- <b>Documentation and version control</b>: maintain documentation of code, features, and technical specifications. Utilize version control systems (<b>git</b>)  to manage code repositories, branches, and code reviews effectively.
 
+<br/>
+
+### Some stats
+
+- Raised and mentoured: 1 junior to middle developer, one intern to junior developer. Two junior developers. 
+- Introduced <b>WCAG</b> principles (accessibility for all);
+- Improved <a href="https://bookmate.com/" target="_blank" style="color:#566eaf">bookmate.com</a> loading time by <b>153%</b>. Chunks refactoring, a combination of async/defer fetching and improved runtime for better UX.
+- Launched <b>two major game-changing features</b> for the product: a new async purchase mechanism, and option to pay via Apple/Google pay. (Before users could only manually enter their card details)

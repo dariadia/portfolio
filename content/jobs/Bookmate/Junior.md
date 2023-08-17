@@ -19,4 +19,9 @@ tags:
 - Implement designs: <b>from design mockups to web pages using HTML, CSS, and JavaScript</b>. Ensure that the design is accurately translated into code while maintaining <b>responsiveness and cross-browser compatibility</b>.
 - Work with a variety of different languages, platforms, frameworks, and content management systems (<b>JavaScript, TypeScript, React, and Netlify</b>)
 - Manage changes to source code using <b>git</b>
+<br/>
 
+### Some stats
+
+- Boosted <a href="https://zurnal.bookmate.com/" target="_blank" style="color:#566eaf">Bookmate Zurnal</a> (website) performance by <b>82%</b> (better UX, faster page load, less API strain);
+- Improved a corporate internal app's <b>UX</b> (CDN uploader) to make it intuitive to use. 

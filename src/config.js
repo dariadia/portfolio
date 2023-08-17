@@ -1,5 +1,5 @@
 module.exports = {
-  email: 'daria.diachkova@mail.ru',
+  email: 'dariavdiachkova@gmail.com',
   socialMedia: [
     {
       name: 'GitHub',
@@ -33,6 +33,10 @@ module.exports = {
       url: '/#projects',
     },
     {
+      name: 'Posts',
+      url: '/#posts',
+    },
+    {
       name: 'Contact',
       url: '/#contact',
     },
@@ -60,7 +64,7 @@ module.exports = {
     shadowMain: 'rgba(130, 148, 196, 0.4)',
   },
 
-  srConfig: (delay = 200, viewFactor = 0.25) => ({
+  srConfig: (delay = 200, viewFactor = 0.1) => ({
     origin: 'bottom',
     distance: '20px',
     duration: 500,

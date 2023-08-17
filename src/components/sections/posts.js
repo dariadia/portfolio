@@ -204,8 +204,8 @@ const Posts = () => {
         <footer>
           {tags && (
             <ul className="project-tags-list">
-              {tags.map((tags, i) => (
-                <li key={i}>{tags}</li>
+              {tags.map((tag, i) => (
+                <li key={i}>#{tag}</li>
               ))}
             </ul>
           )}
@@ -214,9 +214,9 @@ const Posts = () => {
     );
   };
 
-  return (<StyledPostsSection>
+  return (<StyledPostsSection id="posts">
     <h2 ref={revealTitle}>Blog Posts</h2>
-    <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
+    <Link className="inline-link archive-link" to="/posts" ref={revealArchiveLink}>
       view the archive
     </Link>
     <ul className="posts-grid">

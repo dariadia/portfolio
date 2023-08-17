@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '0'
 title: 'Year In Review'
 cover: './sample.png'
 github: 'https://github.com/dariadia/year-in-review'

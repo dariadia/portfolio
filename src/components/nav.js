@@ -98,7 +98,7 @@ const StyledLinks = styled.div`
           color: var(--highlight);
         }
         &:before {
-          content: '֯֯֯❯' counter(item) '.';
+          content: '֯֯֯✦' counter(item) '.';
           margin-right: 5px;
           color: var(--accent);
           font-size: var(--xxs);
