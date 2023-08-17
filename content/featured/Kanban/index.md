@@ -13,12 +13,4 @@ company_url: https://github.com/dariadia/
 type: 'project'
 ---
 
-A simple **Kanban board**: 
-  - add, edit, delete tasks and columns;
-  - drag and drop items around. 
-
-<br />
-
-**Second tab**: sample banking.
-  - add/edit/delete transactions;
-  - monitor the total operations count, value and statuses.
+A simple Kanban board, in this app, one can **add, edit, delete tasks and columns**, and drag and drop tasks between the columns. 
