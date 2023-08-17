@@ -36,7 +36,7 @@ const StyledText = styled.div`
       font-size: var(--xs);
 
       &:before {
-        content: '❯';
+        content: '֯֯✦';
         position: absolute;
         left: 0;
         color: var(--accent);
