@@ -60,7 +60,7 @@ module.exports = {
     shadowMain: 'rgba(130, 148, 196, 0.4)',
   },
 
-  srConfig: (delay = 200, viewFactor = 0.25) => ({
+  srConfig: (delay = 200, viewFactor = 0.1) => ({
     origin: 'bottom',
     distance: '20px',
     duration: 500,
