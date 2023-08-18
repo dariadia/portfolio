@@ -24,9 +24,9 @@ const StyledProject = styled.li`
   color: var(--text);
   display: grid;
   grid-gap: 16px;
-  grid-template-areas: "title title title"
-    "tags tags tags"
-    "image desc desc";
+  grid-template-areas: "title title"
+    "tags tags"
+    "image desc";
   align-items: center;
   max-width: calc(100% - 32px);
   @media (max-width: 480px) {
