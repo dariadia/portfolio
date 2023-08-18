@@ -9,7 +9,7 @@ import { Icon } from '@components';
 
 const StyledMainContainer = styled.main`
   & > header {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     text-align: center;
 
     a {

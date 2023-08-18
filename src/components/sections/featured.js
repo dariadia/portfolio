@@ -18,9 +18,15 @@ const StyledProjectsGrid = styled.ul`
 `;
 
 const StyledProject = styled.li`
+  border-radius: var(--border-radius);
+  background-color: var(--complementary);
+  padding: 12px;
+  color: var(--text);
   display: grid;
-  grid-gap: 24px;
-  grid-template-columns: 2fr 3fr;
+  grid-gap: 16px;
+  grid-template-areas: "title title title"
+    "tags tags tags"
+    "image desc desc";
   align-items: center;
   max-width: calc(100% - 32px);
   @media (max-width: 480px) {
@@ -32,7 +38,7 @@ const StyledProject = styled.li`
   }
 
   &:not(:last-of-type) {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     @media (max-width: 768px) {
       margin: 0 auto 70px;
     }
@@ -53,24 +59,9 @@ const StyledProject = styled.li`
       }
     }
     .project-tags-list {
-      justify-content: flex-end;
-      flex-direction: column;
-      text-align: right;
       > li > .inline-link { 
         &:hover {
-          color: var(--accent);
-        }
-      }
-
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-      }
-
-      li {
-        margin: 0 0 5px 20px;
-
-        @media (max-width: 768px) {
-          margin: 0 10px 5px 0;
+          font-weight: bold;
         }
       }
     }
@@ -88,14 +79,13 @@ const StyledProject = styled.li`
   }
 
   .project-content {
-    position: relative;
+    grid-area: desc;
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
       padding: 40px 40px 30px;
-      z-index: 5;
     }
     @media (max-width: 480px) {
       padding: 30px 25px 20px;
@@ -111,22 +101,19 @@ const StyledProject = styled.li`
   }
 
   .project-title {
+    grid-area: title;
     color: var(--accent);
     font-family: var(--font-main);
     font-size: clamp(24px, 5vw, 28px);
+    text-align: center;
+    margin: 0;
     > a:hover {
       color: var(--highlight);
     }
-    @media (min-width: 768px) {
-      margin: 0 0 20px;
-    }
-
     @media (max-width: 768px) {
       color: white;
-
       a {
         position: static;
-
         &:before {
           content: '';
           display: block;
@@ -142,12 +129,6 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    position: relative;
-    z-index: 2;
-    padding: 25px;
-    border-radius: var(--border-radius);
-    background-color: var(--complementary);
-    color: var(--text);
     font-size: var(--lg);
     text-align: center;
     direction: ltr;
@@ -173,15 +154,11 @@ const StyledProject = styled.li`
   }
 
   .project-tags-list {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-    margin: 25px 0 10px;
-    padding: 0;
+    grid-area: tags;
     list-style: none;
-    flex-direction: column;
-
+    display: flex;
+    margin: auto;
+    padding: 0;
     > li > .inline-link {
       color: var(--text);
       &: hover {
@@ -190,7 +167,7 @@ const StyledProject = styled.li`
     }
 
     li {
-      margin: 0 20px 5px 0;
+      margin-right: 12px;
       color: var(--text);
       font-family: var(--font-main);
       font-size: var(--xs);
@@ -198,10 +175,7 @@ const StyledProject = styled.li`
     }
 
     @media (max-width: 768px) {
-      margin: 10px 0;
-
       li {
-        margin: 0 10px 5px 0;
         color: var(--text);
       }
     }
@@ -210,7 +184,6 @@ const StyledProject = styled.li`
   .project-links {
     display: flex;
     align-items: center;
-    position: relative;
     margin-top: 10px;
     margin-left: -10px;
     color: var(--text);
@@ -222,9 +195,7 @@ const StyledProject = styled.li`
   }
 
   .project-image {
-    position: relative;
-    z-index: 1;
-
+    grid-area: image;
     @media (max-width: 768px) {
       height: 100%;
       opacity: 0.25;
@@ -309,43 +280,43 @@ const Featured = () => {
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+                <h3 className="project-title">
+                  <a href={url}>{title}</a>
+                </h3>
+                {tags.length && (
+                  <ul className="project-tags-list">
+                    {tags.map(tag => (
+                      <li key={tag}>
+                        <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                          #{tag}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="project-image">
                   <a href={url ? url : github ? github : '#'}>
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
                 <div className="project-content">
-                    <h3 className="project-title">
-                      <a href={url}>{title}</a>
-                    </h3>
-                    <div
-                      className="project-description"
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                    {tags.length && (
-                      <ul className="project-tags-list">
-                        {tags.map(tag => (
-                          <li key={tag}>
-                            <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
-                              #{tag}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                  <div
+                    className="project-description"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                  <div className="project-links">
+                    {github && (
+                      <a href={github} aria-label="GitHub Link">
+                        <Icon name="GitHub" />
+                      </a>
                     )}
-                    <div className="project-links">
-                      {github && (
-                        <a href={github} aria-label="GitHub Link">
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {url && (
-                        <a href={url} aria-label="external link" className="url">
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
+                    {url && (
+                      <a href={url} aria-label="external link" className="url">
+                        <Icon name="External" />
+                      </a>
+                    )}
                   </div>
+                </div>
               </StyledProject>
             );
           })}
