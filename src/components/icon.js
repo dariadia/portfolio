@@ -18,8 +18,10 @@ const Icon = ({ name }) => {
       return <i className="fa-solid fa-circle-arrow-up" />;
     case 'Telegram':
       return <i className="fa-brands fa-telegram" />;
+    case 'Post':
+      return <span className="fa-link-to">Link to post</span>;
     default:
-      return <i className="fa-solid fa-arrow-up-right-from-square" />;
+      return <span className="fa-link-to">Link to project</span>;
   }
 }
 

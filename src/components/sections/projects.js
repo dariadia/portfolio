@@ -84,9 +84,7 @@ const StyledProject = styled.li`
   }
 
   .project-top {
-    ${({ theme }) => theme.mixins.flexBetween};
     margin-bottom: 12px;
-
     .folder {
       color: var(--accent);
     }
@@ -94,12 +92,11 @@ const StyledProject = styled.li`
     .project-links {
       display: flex;
       align-items: center;
-      margin-right: -10px;
       color: var(--text);
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
-        padding: 5px 7px;
+        padding: 5px 7px 5px 0;
       }
     }
   }
