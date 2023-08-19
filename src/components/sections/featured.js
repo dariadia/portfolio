@@ -18,21 +18,26 @@ const StyledProjectsGrid = styled.ul`
 `;
 
 const StyledProject = styled.li`
+  border-radius: var(--border-radius);
+  background-color: var(--complementary);
+  padding: 24px 24px 36px;
+  box-sizing: border-box;
+  color: var(--text);
   display: grid;
-  grid-gap: 24px;
-  grid-template-columns: 2fr 3fr;
+  grid-gap: 16px;
+  margin: 0 auto;
+  grid-template-areas: "title title"
+    "tags tags"
+    "image desc";
   align-items: center;
-  max-width: calc(100% - 32px);
   @media (max-width: 480px) {
-    grid-template-columns: 1fr;
-    margin: auto;
+    grid-template-areas: "title"
+    "tags"
+    "image"
+    "desc";
   }
-  &:nth-child(2) {
-    direction: rtl;
-  }
-
   &:not(:last-of-type) {
-    margin-bottom: 100px;
+    margin-bottom: 32px;
     @media (max-width: 768px) {
       margin: 0 auto 70px;
     }
@@ -41,64 +46,17 @@ const StyledProject = styled.li`
     }
   }
 
-  &:nth-of-type(odd) {
-    .project-content {
-      text-align: center;
-      @media (max-width: 768px) {
-        padding: 40px 40px 30px;
-        text-align: left;
-      }
-      @media (max-width: 480px) {
-        padding: 25px 25px 20px;
-      }
-    }
-    .project-tags-list {
-      justify-content: flex-end;
-      flex-direction: column;
-      text-align: right;
-      > li > .inline-link { 
-        &:hover {
-          color: var(--accent);
-        }
-      }
-
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-      }
-
-      li {
-        margin: 0 0 5px 20px;
-
-        @media (max-width: 768px) {
-          margin: 0 10px 5px 0;
-        }
-      }
-    }
-    .project-links {
-      justify-content: flex-end;
-      margin-left: 0;
-      margin-right: -10px;
-
-      @media (max-width: 768px) {
-        justify-content: flex-start;
-        margin-left: -10px;
-        margin-right: 0;
-      }
-    }
-  }
-
   .project-content {
-    position: relative;
+    grid-area: desc;
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: 100%;
       padding: 40px 40px 30px;
-      z-index: 5;
     }
     @media (max-width: 480px) {
-      padding: 30px 25px 20px;
+      padding: 0;
     }
   }
 
@@ -110,109 +68,60 @@ const StyledProject = styled.li`
     font-weight: 400;
   }
 
+  .fa-link-to {
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: bold;
+  }
+
   .project-title {
+    grid-area: title;
     color: var(--accent);
     font-family: var(--font-main);
     font-size: clamp(24px, 5vw, 28px);
+    text-align: center;
+    margin: 0;
     > a:hover {
       color: var(--highlight);
-    }
-    @media (min-width: 768px) {
-      margin: 0 0 20px;
-    }
-
-    @media (max-width: 768px) {
-      color: white;
-
-      a {
-        position: static;
-
-        &:before {
-          content: '';
-          display: block;
-          position: absolute;
-          z-index: 0;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-        }
-      }
     }
   }
 
   .project-description {
-    position: relative;
-    z-index: 2;
-    padding: 25px;
-    border-radius: var(--border-radius);
-    background-color: var(--complementary);
-    color: var(--text);
     font-size: var(--lg);
-    text-align: center;
-    direction: ltr;
-
-    @media (max-width: 768px) {
-      padding: 20px 0;
-      background-color: transparent;
-      box-shadow: none;
-
-      &:hover {
-        box-shadow: none;
-      }
-    }
-
     a {
       ${({ theme }) => theme.mixins.inlineLink};
-    }
-
-    strong {
-      color: white;
-      font-weight: normal;
     }
   }
 
   .project-tags-list {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 2;
-    margin: 25px 0 10px;
-    padding: 0;
+    grid-area: tags;
     list-style: none;
-    flex-direction: column;
-
+    display: flex;
+    margin: auto;
+    padding: 0;
     > li > .inline-link {
       color: var(--text);
       &: hover {
         color: var(--accent);
       }
     }
-
+    @media (max-width: 500px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     li {
-      margin: 0 20px 5px 0;
       color: var(--text);
       font-family: var(--font-main);
       font-size: var(--xs);
       white-space: nowrap;
-    }
-
-    @media (max-width: 768px) {
-      margin: 10px 0;
-
-      li {
-        margin: 0 10px 5px 0;
-        color: var(--text);
-      }
+      margin: 0 8px 0;
     }
   }
 
   .project-links {
     display: flex;
     align-items: center;
-    position: relative;
-    margin-top: 10px;
-    margin-left: -10px;
+    margin: 10px 0 0 -10px;
     color: var(--text);
 
     a {
@@ -222,14 +131,7 @@ const StyledProject = styled.li`
   }
 
   .project-image {
-    position: relative;
-    z-index: 1;
-
-    @media (max-width: 768px) {
-      height: 100%;
-      opacity: 0.25;
-    }
-
+    grid-area: image;
     a {
       width: 100%;
       height: 100%;
@@ -309,43 +211,43 @@ const Featured = () => {
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
+                <h3 className="project-title">
+                  <a href={url}>{title}</a>
+                </h3>
+                {tags.length && (
+                  <ul className="project-tags-list">
+                    {tags.map(tag => (
+                      <li key={tag}>
+                        <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                          #{tag}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 <div className="project-image">
                   <a href={url ? url : github ? github : '#'}>
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
                 <div className="project-content">
-                    <h3 className="project-title">
-                      <a href={url}>{title}</a>
-                    </h3>
-                    <div
-                      className="project-description"
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                    {tags.length && (
-                      <ul className="project-tags-list">
-                        {tags.map(tag => (
-                          <li key={tag}>
-                            <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
-                              #{tag}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                  <div
+                    className="project-description"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                  <div className="project-links">
+                    {github && (
+                      <a href={github} aria-label="GitHub Link">
+                        <Icon name="GitHub" />
+                      </a>
                     )}
-                    <div className="project-links">
-                      {github && (
-                        <a href={github} aria-label="GitHub Link">
-                          <Icon name="GitHub" />
-                        </a>
-                      )}
-                      {url && (
-                        <a href={url} aria-label="external link" className="url">
-                          <Icon name="External" />
-                        </a>
-                      )}
-                    </div>
+                    {url && (
+                      <a href={url} aria-label="external link" className="url">
+                        <Icon name="External" />
+                      </a>
+                    )}
                   </div>
+                </div>
               </StyledProject>
             );
           })}

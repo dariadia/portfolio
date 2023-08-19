@@ -15,7 +15,7 @@ const StyledPostHeader = styled.header`
   }
 `;
 const StyledPostContent = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   h1,
   h2,
   h3,

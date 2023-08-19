@@ -8,19 +8,18 @@ import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledPostsSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   h2 {
     font-size: clamp(24px, 5vw, var(--heading));
+    text-align: center;
   }
-
   .archive-link {
     font-family: var(--font-main);
     font-size: var(--sm);
-    &:after {
-      bottom: 0.1em;
+    text-align: center;
+    display: block;
+    &:hover {
+      font-weight: bold;
+      transition: 0.3s font-weight;
     }
   }
 
@@ -34,12 +33,16 @@ const StyledPostsSection = styled.section`
 
     @media (max-width: 1080px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      margin: 12px 0;
     }
   }
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
+    margin: 48px auto 0;
+    @media (max-width: 500px) {
+      margin: 12px auto 0;
+    }
   }
 `;
 
@@ -68,9 +71,6 @@ const StyledPost = styled.li`
     
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
-    ${({ theme }) => theme.mixins.flexBetween};
-    flex-direction: column;
-    align-items: flex-start;
     position: relative;
     height: 100%;
     padding: 2rem 1.75rem;
@@ -89,11 +89,8 @@ const StyledPost = styled.li`
     }
 
     .project-links {
-      display: flex;
-      align-items: center;
-      margin-right: -10px;
+      margin: 0 0 12px;
       color: var(--text);
-
       a {
         ${({ theme }) => theme.mixins.flexCentered};
         padding: 5px 7px;
@@ -117,10 +114,6 @@ const StyledPost = styled.li`
   }
 
   .project-tags-list {
-    display: flex;
-    align-items: flex-end;
-    flex-grow: 1;
-    flex-wrap: wrap;
     padding: 0;
     margin: 20px 0 0 0;
     list-style: none;
@@ -183,33 +176,29 @@ const Posts = () => {
 
     return (
       <div className="project-inner">
-        <header>
-          <div className="project-top">
-            <div className="project-links">
-              {slug && (
-                <a
-                  href={slug}
-                  aria-label="external link"
-                  className="url"
-                  target="_blank"
-                  rel="noreferrer">
-                  <Icon name="url" />
-                  <b>{title}</b>
-                </a>
-              )}
-            </div>
-          </div>
-          <p className="project-description">{task}</p>
-        </header>
-        <footer>
-          {tags && (
-            <ul className="project-tags-list">
-              {tags.map((tag, i) => (
-                <li key={i}>#{tag}</li>
-              ))}
-            </ul>
+        <div className="project-links">
+          {slug && (
+            <a
+              href={slug}
+              aria-label="external link"
+              className="url"
+              target="_blank"
+              rel="noreferrer">
+              <Icon name="Post" />
+            </a>
           )}
-        </footer>
+          <br />
+          <b>{title}</b>
+        </div>
+        <br />
+        <p className="project-description">{task}</p>
+        {tags && (
+          <ul className="project-tags-list">
+            {tags.map((tag, i) => (
+              <li key={i}>#{tag}</li>
+            ))}
+          </ul>
+        )}
       </div>
     );
   };

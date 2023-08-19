@@ -12,6 +12,12 @@ const StyledMeSection = styled.section`
   height: 100vh;
   padding: 0;
 
+  @media (max-width: 820px) {
+    min-height: 50vh;
+    height: 50vh;
+    padding-top: var(--nav-height) / 2;
+  }
+
   @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
     height: auto;
     padding-top: var(--nav-height) / 2;

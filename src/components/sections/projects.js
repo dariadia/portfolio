@@ -33,15 +33,20 @@ const StyledProjectsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
-
     @media (max-width: 900px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    @media (max-width: 500px) {
+      margin: 12px 0;
     }
   }
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
-    margin: 200px auto 0;
+    margin: 48px auto 0;
+    @media (max-width: 500px) {
+      margin: 12px auto 0;
+    }
   }
 `;
 
@@ -79,9 +84,7 @@ const StyledProject = styled.li`
   }
 
   .project-top {
-    ${({ theme }) => theme.mixins.flexBetween};
     margin-bottom: 12px;
-
     .folder {
       color: var(--accent);
     }
@@ -89,12 +92,11 @@ const StyledProject = styled.li`
     .project-links {
       display: flex;
       align-items: center;
-      margin-right: -10px;
       color: var(--text);
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
-        padding: 5px 7px;
+        padding: 5px 7px 5px 0;
       }
     }
   }

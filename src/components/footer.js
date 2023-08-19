@@ -76,7 +76,7 @@ const Footer = () => {
       </StyledSocialLinks>
       <StyledCredit tabindex="-1">
         <a href="https://github.com/dariadia/portfolio">
-          <div>by Daria Diachkova</div>
+          <div>by Daria V. Diachkova</div>
         </a>
         {totalCount && (
           <div className="github-stats">
