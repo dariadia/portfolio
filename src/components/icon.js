@@ -7,7 +7,7 @@ const Icon = ({ name }) => {
     case 'Codepen':
       return <i className="fa-brands fa-codepen" />;
     case 'External':
-      return <i className="fa-solid fa-arrow-up-right-from-square" />;
+      return <span className="fa-link-to">Link to project</span>;
     case 'Folder':
       return <i className="fa-regular fa-folder-bookmark" />;
     case 'GitHub':
