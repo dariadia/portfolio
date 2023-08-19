@@ -33,15 +33,20 @@ const StyledProjectsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
-
     @media (max-width: 900px) {
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    @media (max-width: 500px) {
+      margin: 12px 0;
     }
   }
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
     margin: 48px auto 0;
+    @media (max-width: 500px) {
+      margin: 12px auto 0;
+    }
   }
 `;
 

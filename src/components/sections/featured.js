@@ -30,7 +30,6 @@ const StyledProject = styled.li`
     "tags tags"
     "image desc";
   align-items: center;
-  max-width: calc(100% - 32px);
   @media (max-width: 480px) {
     grid-template-areas: "title"
     "tags"
