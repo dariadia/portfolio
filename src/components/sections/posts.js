@@ -30,16 +30,12 @@ const StyledPostsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
-
-    @media (max-width: 1080px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      margin: 12px 0;
-    }
   }
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
     margin: 48px auto 0;
+    display: block;
     @media (max-width: 500px) {
       margin: 12px auto 0;
     }
