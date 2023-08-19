@@ -6,8 +6,12 @@ import { usePrefersReducedMotion } from '@hooks';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
-  margin: 0 auto 100px;
+  margin: 50px auto 100px;
   text-align: center;
+
+  .get-in-touch {
+    margin: 48px 0;
+  }
 
   @media (max-width: 768px) {
     margin: 0 auto 50px;
@@ -53,9 +57,9 @@ const Contact = () => {
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="subheading overline">What’s Next?</h2>
-      <h2 className="title">Get In Touch</h2>
+      <h2 className="title get-in-touch">Get In Touch</h2>
       <p>
-        Drop a line just to say "hi" – or – inquire about hiring me for a project or as a tutor.
+        Drop a line just to say "hi" – or – inquire about hiring me for a project or as a mentor.
       </p>
       <a className="email-link" href={`mailto:${email}`}>
         Say Hello
