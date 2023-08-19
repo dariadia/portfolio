@@ -11,6 +11,10 @@ const StyledLangSection = styled.section`
   padding: 0;
   grid-gap: 64px;
 
+  @media (max-width: 420px) {
+    grid-gap: 12px;
+  }
+
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -19,6 +23,11 @@ const StyledLangSection = styled.section`
     margin: 20px 0 0 0;
     overflow: hidden;
     list-style: none;
+
+    @media (max-width: 420px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
 
     li {
       position: relative;
@@ -72,15 +81,10 @@ const StyledLangSection = styled.section`
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
-
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 50px;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
   }
 `;
 

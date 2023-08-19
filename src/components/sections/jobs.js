@@ -12,11 +12,9 @@ const StyledJobsSection = styled.section`
     display: flex;
     max-width: 800px;
     margin: auto;
-    @media (max-width: 600px) {
-      display: block;
-    }
-    @media (min-width: 700px) {
-      min-height: 340px;
+    @media (max-width: 820px) {
+      flex-direction: column;
+      align-items: center;
     }
   }
 `;
@@ -28,7 +26,7 @@ const StyledTabList = styled.div`
   padding: 0;
   margin: 0;
   list-style: none;
-  @media (max-width: 600px) {
+  @media (max-width: 820px) {
     overflow-x: hidden;
     width: calc(100% - 32px);
     padding-left: 50px;
@@ -260,7 +258,7 @@ const Jobs = () => {
                     <h3>
                       <span>{title}</span>
                       <span className="company">
-                        &nbsp;at&nbsp;
+                        {' '}at&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>

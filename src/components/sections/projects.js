@@ -41,7 +41,7 @@ const StyledProjectsSection = styled.section`
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
-    margin: 200px auto 0;
+    margin: 48px auto 0;
   }
 `;
 
