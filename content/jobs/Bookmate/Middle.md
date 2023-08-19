@@ -21,5 +21,5 @@ tags:
 
 ### Some stats
 
-- Upped internal projects test coverage by <b>15%</b>.
+- Upped internal projects' test coverage by <b>15%</b>.
 - Introduced technical documentation to the frontend team. Covered 60% of the main product (website).

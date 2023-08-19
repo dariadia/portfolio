@@ -12,7 +12,7 @@ tags:
   - Redux
 ---
 - <b>Collaboration and communication</b>: <i>communicate effectively with team members and stakeholders</i>, seeking clarification when needed and providing updates on progress and challenges. Contribute actively to team discussions and brainstorming sessions on a daily basis.
-- <b>Problem solving</b>: Demonstrate problem-solving skills by identifying and resolving technical challenges encountered during development. <b>Analyze issues, propose solutions,</b> and implement fixes to ensure the smooth functioning of the application.
+- <b>Problem-solving</b>: Demonstrate problem-solving skills by identifying and resolving technical challenges encountered during development. <b>Analyze issues, propose solutions,</b> and implement fixes to ensure the smooth functioning of the application.
 
 <br/>
 
