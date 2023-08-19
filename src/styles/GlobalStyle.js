@@ -177,8 +177,8 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     position: relative;
-    margin: 10px 0 40px;
-    width: 100%;
+    margin: 0 auto 32px;
+    width: fit-content;
     font-size: clamp(26px, 5vw, var(--heading));
     &:before {
       position: relative;

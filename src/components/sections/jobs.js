@@ -10,7 +10,7 @@ import { usePrefersReducedMotion } from '@hooks';
 const StyledJobsSection = styled.section`
   .inner {
     display: flex;
-    max-width: 800px;
+    max-width: 900px;
     margin: auto;
     @media (max-width: 820px) {
       flex-direction: column;
@@ -127,7 +127,7 @@ const StyledTabPanels = styled.div`
 const StyledTabPanel = styled.div`
   width: 100%;
   height: auto;
-  padding: 10px 5px;
+  padding: 0 5px;
   ul {
     ${({ theme }) => theme.mixins.listStyled};
   }

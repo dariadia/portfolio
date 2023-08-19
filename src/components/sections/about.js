@@ -81,10 +81,18 @@ const StyledLangSection = styled.section`
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
+  .subheading {
+    width: 100%;
+    margin: 10px 0 40px;
+  }
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 50px;
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
   }
 `;
 
@@ -93,7 +101,7 @@ const StyledPic = styled.div`
   max-width: 300px;
   margin-top: -48px;
   @media (max-width: 768px) {
-    margin: 50px auto 0;
+    margin: 12px auto;
     width: 70%;
   }
 
