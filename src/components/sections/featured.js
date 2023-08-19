@@ -38,9 +38,6 @@ const StyledProject = styled.li`
   }
   &:not(:last-of-type) {
     margin-bottom: 32px;
-    @media (max-width: 768px) {
-      margin: 0 auto 70px;
-    }
     @media (max-width: 480px) {
       margin: 0 auto 30px;
     }

@@ -30,6 +30,10 @@ const StyledPostsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
+    @media (max-width: 820px) {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      margin: 12px 0;
+    }
   }
 
   .more-button {
