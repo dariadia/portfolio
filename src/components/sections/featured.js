@@ -20,10 +20,12 @@ const StyledProjectsGrid = styled.ul`
 const StyledProject = styled.li`
   border-radius: var(--border-radius);
   background-color: var(--complementary);
-  padding: 12px;
+  padding: 24px 24px 36px;
+  box-sizing: border-box;
   color: var(--text);
   display: grid;
   grid-gap: 16px;
+  margin: 0 auto;
   grid-template-areas: "title title"
     "tags tags"
     "image desc";
@@ -33,12 +35,8 @@ const StyledProject = styled.li`
     grid-template-columns: 1fr;
     margin: auto;
   }
-  &:nth-child(2) {
-    direction: rtl;
-  }
-
   &:not(:last-of-type) {
-    margin-bottom: 50px;
+    margin-bottom: 32px;
     @media (max-width: 768px) {
       margin: 0 auto 70px;
     }
@@ -120,11 +118,6 @@ const StyledProject = styled.li`
     a {
       ${({ theme }) => theme.mixins.inlineLink};
     }
-
-    strong {
-      color: white;
-      font-weight: normal;
-    }
   }
 
   .project-tags-list {
@@ -141,25 +134,18 @@ const StyledProject = styled.li`
     }
 
     li {
-      margin-right: 12px;
       color: var(--text);
       font-family: var(--font-main);
       font-size: var(--xs);
       white-space: nowrap;
-    }
-
-    @media (max-width: 768px) {
-      li {
-        color: var(--text);
-      }
+      margin: 0 8px 0;
     }
   }
 
   .project-links {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    margin-left: -10px;
+    margin: 10px 0 0 -10px;
     color: var(--text);
 
     a {
