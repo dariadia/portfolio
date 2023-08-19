@@ -2,9 +2,9 @@ const config = require('./src/config');
 
 module.exports = {
   siteMetadata: {
-    title: 'Daria Diachkova',
+    title: 'Daria V. Diachkova',
     description:
-      'Daria Diachkova is a software engineer. Senior Frontend developer. Team Leader. Coding enthusiast.',
+      'Daria (V.) Diachkova is a software engineer. Senior Frontend developer. Team Leader. Coding enthusiast.',
     siteUrl: 'https://dariadia-portfolio.vercel.app/',
     image: '/og.png',
   },

@@ -167,7 +167,7 @@ const About = () => {
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Daria Diachkova photo"
+              alt="Daria V. Diachkova, senior frontend engineer"
             />
           </div>
         </StyledPic>
