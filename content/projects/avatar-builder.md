@@ -13,4 +13,4 @@ tags:
 type: 'project'
 ---
 
-Build your own avatar and save it as an image. Pure CSS art, no sprites. 
+Build your own avatar and save it as an image. Pure <b>CSS</b> art, no sprites. 

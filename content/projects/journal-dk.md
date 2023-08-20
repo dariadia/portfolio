@@ -15,5 +15,5 @@ company_url: https://bookmate.com/
 type: 'project'
 ---
 
-"Bookmate Journal" is an online literary journal published for readers in Denmark. New items are added daily by the editorial team via Netlify CMS. All articles are then rendered on the web using the pre-set mechanics, which I've implemented via JavaScript, SCSS, and Hugo. 
+"Bookmate Journal" is an online literary journal published for readers in Denmark. New items are added daily by the editorial team via Netlify CMS. All articles are then rendered on the web using the pre-set mechanics, which I've implemented via <b>JavaScript, SCSS, and Hugo</b>. 
 
