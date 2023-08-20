@@ -33,6 +33,10 @@ const StyledProjectsSection = styled.section`
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 25px;
     gap: 12px;
+    height: 1650px;
+    &.shown-more {
+      height: 2950px;
+    }
     > li {
       height: fit-content;
       box-sizing: border-box;
@@ -68,7 +72,8 @@ const StyledProjectsSection = styled.section`
       grid-row: 57;
     }
 
-    @media (max-width:500px) {
+    @media (max-width:820px) {
+      height: inherit;
       display: block;
       > li:not(:last-child) {
         margin-bottom: 12px;
@@ -197,7 +202,7 @@ const Projects = () => {
   }
 }`);
 
-  const [showMore, setShowMore] = useState(true);
+  const [showMore, setShowMore] = useState(false);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -276,7 +281,7 @@ const Projects = () => {
   return (
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Projects</h2>
-      <ul className="projects-showcase">
+      <ul className={`projects-showcase${showMore ? ' shown-more': ''}`}>
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
