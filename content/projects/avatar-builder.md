@@ -1,5 +1,6 @@
 ---
 date: '2021'
+sortBy: 6
 title: 'Avatar Builder'
 cover: './images/avatar-builder.png'
 github: 'https://github.com/dariadia/avatar-builder'

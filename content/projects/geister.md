@@ -1,5 +1,6 @@
 ---
 date: '2023-07-01'
+sortBy: 0
 title: 'Geister (RPG)'
 cover: './images/geister.png'
 github: 'https://github.com/dariadia/library-rpg'

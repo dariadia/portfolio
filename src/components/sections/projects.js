@@ -26,18 +26,53 @@ const StyledProjectsSection = styled.section`
     }
   }
 
-  .projects-grid {
+  .projects-showcase {
     ${({ theme }) => theme.mixins.listReset};
-    display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-gap: 15px;
-    position: relative;
     margin-top: 50px;
-    @media (max-width: 900px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 25px;
+    gap: 12px;
+    > li {
+      height: fit-content;
+      box-sizing: border-box;
     }
-    @media (max-width: 500px) {
-      margin: 12px 0;
+    > li:nth-child(odd) {
+      grid-column: 1;
+    }
+    > li:nth-child(even) {
+      grid-column: 2;
+    }
+    > li:nth-child(1) {
+      grid-row: 1;
+    }
+    > li:nth-child(2) {
+      grid-row: 1;
+    }
+    > li:nth-child(3) {
+      grid-row: 24;
+    }
+    > li:nth-child(4) {
+      grid-row: 18;
+    }
+    > li:nth-child(5) {
+      grid-row: 47;
+    }
+    > li:nth-child(6) {
+      grid-row: 40;
+    }
+    > li:nth-child(7) {
+      grid-row: 65;
+    }
+    > li:nth-child(8) {
+      grid-row: 57;
+    }
+
+    @media (max-width:500px) {
+      display: block;
+      > li:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
   }
 
@@ -63,12 +98,6 @@ const StyledProject = styled.li`
       }
     }
   }
-
-  a {
-    position: relative;
-    z-index: 1;
-  }
-
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
     ${({ theme }) => theme.mixins.flexBetween};
@@ -80,7 +109,6 @@ const StyledProject = styled.li`
     border-radius: var(--border-radius);
     background-color: var(--complementary);
     transition: var(--transition);
-    overflow: auto;
   }
 
   .project-top {
@@ -105,16 +133,13 @@ const StyledProject = styled.li`
     margin: 0;
     color: var(--text);
     font-size: var(--xxl);
-
     .inline-link:after {
       display: none;
     }
-
     .company > .inline-link:hover {
       color: var(--highlight);
     }
   }
-
   .project-description {
     color: var(--text);
     font-size: 17px;
@@ -138,7 +163,6 @@ const StyledProject = styled.li`
       font-family: var(--font-main);
       font-size: var(--xxs);
       line-height: 1.75;
-
       &:not(:last-of-type) {
         margin-right: 15px;
       }
@@ -150,7 +174,7 @@ const Projects = () => {
   const data = useStaticQuery(graphql`{
   projects: allMarkdownRemark(
     filter: {fileAbsolutePath: {regex: "/content/projects/"}, frontmatter: {type: {eq: "project"}}}
-    sort: {frontmatter: {date: DESC}}
+    sort: {frontmatter: {sortBy: ASC}}
   ) {
     edges {
       node {
@@ -173,7 +197,7 @@ const Projects = () => {
   }
 }`);
 
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
@@ -252,10 +276,7 @@ const Projects = () => {
   return (
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Projects</h2>
-      {/* <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link> */}
-      <ul className="projects-grid">
+      <ul className="projects-showcase">
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&

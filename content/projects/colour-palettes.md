@@ -1,5 +1,6 @@
 ---
 date: '2023-01-01'
+sortBy: 5
 title: 'Colour Palettes'
 cover: './images/colour-palettes.png'
 github: 'https://github.com/dariadia/colour-palettes'
