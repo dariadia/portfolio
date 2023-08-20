@@ -1,5 +1,6 @@
 ---
 date: '2022'
+sortBy: 7
 title: 'Al Margen (literary journal) 🇲🇽'
 cover: './images/almargen.png'
 url: 'https://almargen.bookmate.com/'
