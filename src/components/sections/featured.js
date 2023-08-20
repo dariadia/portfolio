@@ -118,12 +118,16 @@ const StyledProject = styled.li`
   .project-links {
     display: flex;
     align-items: center;
-    margin: 10px 0 0 -10px;
+    margin: 10px 0 0;
     color: var(--text);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};
       padding: 10px;
+      border: 1px solid;
+      border-radius: 4px;
+      &:first-child { border-radius: 50%; }
+      &:not(:last-child) { margin-right: 12px; }
     }
   }
 
