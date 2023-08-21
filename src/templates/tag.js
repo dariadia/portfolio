@@ -55,9 +55,6 @@ const TagTemplate = ({ pageContext, data, location }) => {
       <StyledTagsContainer>
         <h1>
           <span>#{tag}</span>
-          <span>
-            <Link to="/tags">View all tags</Link>
-          </span>
         </h1>
         <ul className="list-styled">
           {edges.map(({ node }) => {
