@@ -177,6 +177,8 @@ const Posts = () => {
     return (
       <div className="project-inner">
         <div className="project-links">
+          <b>{title}</b>
+          <br />
           {slug && (
             <a
               href={slug}
@@ -187,8 +189,6 @@ const Posts = () => {
               <Icon name="Post" />
             </a>
           )}
-          <br />
-          <b>{title}</b>
         </div>
         <br />
         <p className="project-description">{task}</p>

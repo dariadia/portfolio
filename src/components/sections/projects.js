@@ -36,6 +36,7 @@ const StyledProjectsSection = styled.section`
     height: 1600px;
     &.shown-more {
       height: 2830px;
+      @media (max-width:1200px) { height: inherit; }
     }
     > li {
       height: fit-content;
@@ -55,13 +56,13 @@ const StyledProjectsSection = styled.section`
     }
     > li:nth-child(3) {
       grid-row: 23;
+      margin-top: -8px;
     }
     > li:nth-child(4) {
       grid-row: 17;
     }
     > li:nth-child(5) {
       grid-row: 45;
-      margin-top: 12px;
     }
     > li:nth-child(6) {
       grid-row: 38;
@@ -72,8 +73,14 @@ const StyledProjectsSection = styled.section`
     > li:nth-child(8) {
       grid-row: 54;
     }
+    > li {
+      @media (max-width:1200px) and (min-width: 821px) {
+        width: calc(90% - 48px);
+        margin: 12px auto 16px;
+      }
+    }
 
-    @media (max-width:820px) {
+    @media (max-width:1200px) {
       height: inherit;
       display: block;
       > li:not(:last-child) {
