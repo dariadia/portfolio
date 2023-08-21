@@ -209,7 +209,7 @@ const Posts = () => {
   };
 
   return (<StyledPostsSection id="posts">
-    <h2 ref={revealTitle}>Blog Posts</h2>
+    <h2 className="subheading" ref={revealTitle}>Blog Posts</h2>
     <Link className="inline-link archive-link" to="/posts" ref={revealArchiveLink}>
       view the archive
     </Link>
