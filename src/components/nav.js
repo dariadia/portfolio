@@ -62,12 +62,11 @@ const StyledNav = styled.nav`
   z-index: 12;
   .logo {
     ${({ theme }) => theme.mixins.flexCentered};
-    a {
-      color: var(--accent);
-      font-size: 24px;
-      &:hover {
-        color: var(--highlight);
-      }
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 24px;
+    &:hover {
+      color: var(--highlight);
     }
   }
 `;
@@ -142,16 +141,8 @@ const Nav = ({ isHome }) => {
   const fadeDownClass = isHome ? 'fadedown' : '';
 
   const Logo = (
-    <div className="logo" tabIndex="-1">
-      {isHome ? (
-        <a href="/" aria-label="home">
-          <Icon name="ArrowUp" />
-        </a>
-      ) : (
-        <Link to="/" aria-label="home">
-          <Icon name="ArrowUp" />
-        </Link>
-      )}
+    <div className="logo" tabIndex="-1" onClick={() => window.scrollTo(0, 0)}>
+      <Icon name="ArrowUp" />
     </div>
   );
 

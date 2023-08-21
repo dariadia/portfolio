@@ -1,5 +1,6 @@
 ---
-date: '3'
+date: '2023'
+sortBy: 3
 title: 'Banking dashboard'
 cover: './banking.png'
 url: 'https://kanban-dariadia.vercel.app/banking'

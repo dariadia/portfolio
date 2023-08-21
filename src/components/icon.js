@@ -21,7 +21,7 @@ const Icon = ({ name }) => {
     case 'Post':
       return <span className="fa-link-to">Link to post</span>;
     default:
-      return <span className="fa-link-to">Link to project</span>;
+      return <span className="fa-link-to">Live</span>;
   }
 }
 

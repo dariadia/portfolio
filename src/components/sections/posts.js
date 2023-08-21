@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import isServer from '@constants/server-helper';
 import { Icon } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
+import kebabCase from 'lodash/kebabCase';
 
 const StyledPostsSection = styled.section`
   h2 {
@@ -30,16 +31,21 @@ const StyledPostsSection = styled.section`
     grid-gap: 15px;
     position: relative;
     margin-top: 50px;
-
-    @media (max-width: 1080px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    @media (max-width: 820px) {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
       margin: 12px 0;
     }
+  }
+  .fa-link-to {
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: bold;
   }
 
   .more-button {
     ${({ theme }) => theme.mixins.button};
     margin: 48px auto 0;
+    display: block;
     @media (max-width: 500px) {
       margin: 12px auto 0;
     }
@@ -83,18 +89,13 @@ const StyledPost = styled.li`
   .project-top {
     ${({ theme }) => theme.mixins.flexBetween};
     margin-bottom: 35px;
-
-    .folder {
-      color: var(--accent);
-    }
-
-    .project-links {
-      margin: 0 0 12px;
-      color: var(--text);
-      a {
-        ${({ theme }) => theme.mixins.flexCentered};
-        padding: 5px 7px;
-      }
+  }
+  .project-links {
+    color: var(--text);
+    a {
+      margin: 8px 0;
+      padding: 0px 8px 4px;
+      border: 1px solid;
     }
   }
 
@@ -117,6 +118,7 @@ const StyledPost = styled.li`
     padding: 0;
     margin: 20px 0 0 0;
     list-style: none;
+    display: flex;
 
     li {
       font-family: var(--font-main);
@@ -177,6 +179,8 @@ const Posts = () => {
     return (
       <div className="project-inner">
         <div className="project-links">
+          <b>{title}</b>
+          <br />
           {slug && (
             <a
               href={slug}
@@ -187,15 +191,16 @@ const Posts = () => {
               <Icon name="Post" />
             </a>
           )}
-          <br />
-          <b>{title}</b>
         </div>
-        <br />
         <p className="project-description">{task}</p>
-        {tags && (
+        {tags.length && (
           <ul className="project-tags-list">
-            {tags.map((tag, i) => (
-              <li key={i}>#{tag}</li>
+            {tags.map(tag => (
+              <li key={tag}>
+                <Link to={`/tags/${kebabCase(tag)}/`} className="inline-link">
+                  #{tag}
+                </Link>
+              </li>
             ))}
           </ul>
         )}

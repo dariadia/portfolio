@@ -1,5 +1,6 @@
 ---
-date: '2'
+date: '2023'
+sortBy: 2
 title: 'Kanban board'
 cover: './kanban.png'
 url: 'https://kanban-sooty-nine.vercel.app/'

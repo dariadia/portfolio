@@ -38,9 +38,6 @@ const StyledProject = styled.li`
   }
   &:not(:last-of-type) {
     margin-bottom: 32px;
-    @media (max-width: 768px) {
-      margin: 0 auto 70px;
-    }
     @media (max-width: 480px) {
       margin: 0 auto 30px;
     }
@@ -121,12 +118,16 @@ const StyledProject = styled.li`
   .project-links {
     display: flex;
     align-items: center;
-    margin: 10px 0 0 -10px;
+    margin: 10px 0 0;
     color: var(--text);
 
     a {
       ${({ theme }) => theme.mixins.flexCentered};
       padding: 10px;
+      border: 1px solid;
+      border-radius: 4px;
+      &:first-child { border-radius: 50%; }
+      &:not(:last-child) { margin-right: 12px; }
     }
   }
 
@@ -165,7 +166,7 @@ const Featured = () => {
   const data = useStaticQuery(graphql`{
   featured: allMarkdownRemark(
     filter: {fileAbsolutePath: {regex: "/content/featured/"}}
-    sort: {frontmatter: {date: ASC}}
+    sort: {frontmatter: {sortBy: ASC}}
   ) {
     edges {
       node {

@@ -1,5 +1,6 @@
 ---
-date: '0'
+date: '2023'
+sortBy: 0
 title: 'Year In Review'
 cover: './sample.png'
 github: 'https://github.com/dariadia/year-in-review'

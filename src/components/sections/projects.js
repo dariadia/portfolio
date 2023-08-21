@@ -26,18 +26,66 @@ const StyledProjectsSection = styled.section`
     }
   }
 
-  .projects-grid {
+  .projects-showcase {
     ${({ theme }) => theme.mixins.listReset};
-    display: grid;
-    grid-template-columns: repeat(2, minmax(300px, 1fr));
-    grid-gap: 15px;
-    position: relative;
     margin-top: 50px;
-    @media (max-width: 900px) {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 25px;
+    gap: 12px;
+    height: 1600px;
+    &.shown-more {
+      height: 2830px;
+      @media (max-width:1200px) { height: inherit; }
     }
-    @media (max-width: 500px) {
-      margin: 12px 0;
+    > li {
+      height: fit-content;
+      box-sizing: border-box;
+    }
+    > li:nth-child(odd) {
+      grid-column: 1;
+    }
+    > li:nth-child(even) {
+      grid-column: 2;
+    }
+    > li:nth-child(1) {
+      grid-row: 1;
+    }
+    > li:nth-child(2) {
+      grid-row: 1;
+    }
+    > li:nth-child(3) {
+      grid-row: 23;
+      margin-top: -8px;
+    }
+    > li:nth-child(4) {
+      grid-row: 17;
+    }
+    > li:nth-child(5) {
+      grid-row: 45;
+    }
+    > li:nth-child(6) {
+      grid-row: 38;
+    }
+    > li:nth-child(7) {
+      grid-row: 62;
+    }
+    > li:nth-child(8) {
+      grid-row: 54;
+    }
+    > li {
+      @media (max-width:1200px) and (min-width: 821px) {
+        width: calc(90% - 48px);
+        margin: 12px auto 16px;
+      }
+    }
+
+    @media (max-width:1200px) {
+      height: inherit;
+      display: block;
+      > li:not(:last-child) {
+        margin-bottom: 12px;
+      }
     }
   }
 
@@ -63,12 +111,6 @@ const StyledProject = styled.li`
       }
     }
   }
-
-  a {
-    position: relative;
-    z-index: 1;
-  }
-
   .project-inner {
     ${({ theme }) => theme.mixins.boxShadow};
     ${({ theme }) => theme.mixins.flexBetween};
@@ -76,15 +118,17 @@ const StyledProject = styled.li`
     align-items: flex-start;
     position: relative;
     height: 100%;
-    padding: 2rem 1.75rem;
+    padding: 1.2rem 1.75rem 2rem;
     border-radius: var(--border-radius);
     background-color: var(--complementary);
     transition: var(--transition);
-    overflow: auto;
   }
 
   .project-top {
     margin-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     .folder {
       color: var(--accent);
     }
@@ -96,7 +140,14 @@ const StyledProject = styled.li`
 
       a {
         ${({ theme }) => theme.mixins.flexCentered};
-        padding: 5px 7px 5px 0;
+        border: 1px solid;
+        padding: 4px 8px;
+        border-radius: 4px;
+        &:not(:last-child) { 
+          margin: 0 12px 0 24px; 
+          border-radius: 50%; 
+          padding: 8px;
+        }
       }
     }
   }
@@ -105,16 +156,16 @@ const StyledProject = styled.li`
     margin: 0;
     color: var(--text);
     font-size: var(--xxl);
-
     .inline-link:after {
       display: none;
     }
-
-    .company > .inline-link:hover {
-      color: var(--highlight);
-    }
   }
-
+  .company {
+    margin-right: 4px;
+  }
+  .company > .inline-link:hover {
+    color: var(--highlight);
+  }
   .project-description {
     color: var(--text);
     font-size: 17px;
@@ -138,7 +189,6 @@ const StyledProject = styled.li`
       font-family: var(--font-main);
       font-size: var(--xxs);
       line-height: 1.75;
-
       &:not(:last-of-type) {
         margin-right: 15px;
       }
@@ -150,7 +200,7 @@ const Projects = () => {
   const data = useStaticQuery(graphql`{
   projects: allMarkdownRemark(
     filter: {fileAbsolutePath: {regex: "/content/projects/"}, frontmatter: {type: {eq: "project"}}}
-    sort: {frontmatter: {date: DESC}}
+    sort: {frontmatter: {sortBy: ASC}}
   ) {
     edges {
       node {
@@ -205,10 +255,10 @@ const Projects = () => {
               <a href={url} className="url" target="_blank" rel="noreferrer">
                 {title}
               </a>
-              <a href={company_url} rel="noreferrer" className="company inline-link">
-                &nbsp;@{company}
-              </a>
             </h3>
+            <b><a href={company_url} rel="noreferrer" className="company inline-link">
+              &nbsp;@{company}
+            </a></b>
             <div className="project-links">
               {github && (
                 <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
@@ -222,7 +272,7 @@ const Projects = () => {
                   className="url"
                   target="_blank"
                   rel="noreferrer">
-                  <Icon name="url" />
+                  <Icon name="live" />
                 </a>
               )}
             </div>
@@ -249,13 +299,15 @@ const Projects = () => {
     );
   };
 
+  const setShowMode = () => {
+    if (showMore) document.getElementById("2-proj").scrollIntoView(true)
+    setShowMore(!showMore)
+  }
+
   return (
     <StyledProjectsSection>
       <h2 ref={revealTitle}>Other Projects</h2>
-      {/* <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
-      </Link> */}
-      <ul className="projects-grid">
+      <ul className={`projects-showcase${showMore ? ' shown-more' : ''}`}>
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
@@ -274,6 +326,7 @@ const Projects = () => {
                   exit={false}>
                   <StyledProject
                     key={i}
+                    id={`${i}-proj`}
                     ref={el => (revealProjects.current[i] = el)}
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
@@ -285,7 +338,7 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ul>
-      <button className="more-button" onClick={() => setShowMore(!showMore)}>
+      <button className="more-button" id="proj_more-button" onClick={setShowMode}>
         Show {showMore ? 'Less' : 'More'}
       </button>
     </StyledProjectsSection>

@@ -1,5 +1,6 @@
 ---
 date: '2020'
+sortBy: 3
 title: 'Bookmate Zurnal (literary journal) 🇷🇸'
 cover: './images/zurnal.png'
 slug: 'https://zurnal.bookmate.com/'
@@ -14,4 +15,4 @@ company_url: https://bookmate.com/
 type: 'project'
 ---
 
-"Bookmate žurnal" is written in Serbian for Serbia and Croatia. New items are added daily by the editorial team via Netlify CMS. All articles are then rendered on web using the pre-set rails and mechanics, which I've implemented.
+"Bookmate žurnal" is an online literary journal published for readers in Serbia and Croatia. New items are added by the editorial team via Netlify CMS. All articles are then rendered on the web using the pre-set mechanics, which I've implemented via <b>JavaScript, SCSS, and Hugo</b>.

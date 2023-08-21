@@ -1,6 +1,6 @@
 ---
 date: '2022-08-01'
-title: 'Senior Frontend Engineer and team Frontend Lead'
+title: 'Team Frontend Lead'
 company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'August 2022 - now'
