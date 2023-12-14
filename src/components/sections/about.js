@@ -218,10 +218,10 @@ const About = () => {
           <li><b>Currently learning</b>:
           {' '}<StaticImage
               className="img flag-icon"
-              src="../../assets/icons/jp.svg"
+              src="../../assets/icons/fr.svg"
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Japanese flag"
+              alt="French flag"
             />
           </li>
         </ul>
