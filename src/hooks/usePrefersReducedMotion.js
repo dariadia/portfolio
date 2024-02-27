@@ -7,7 +7,7 @@ const QUERY = '(prefers-reduced-motion: no-preference)';
 const isRenderingOnServer = typeof window === 'undefined';
 
 const getInitialState = () =>
-  isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
+  isRenderingOnServer ? false : !window.matchMedia(QUERY).matches;
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(getInitialState);
   useEffect(() => {
