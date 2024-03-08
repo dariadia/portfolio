@@ -4,7 +4,7 @@ title: 'Team Frontend Lead'
 company: 'Bookmate'
 location: 'Dublin, Ireland'
 range: 'August 2022 - January 2024'
-year: 2022
+year: 2023
 slug: lead-dev
 url: 'https://www.bookmate.com/'
 tags:
