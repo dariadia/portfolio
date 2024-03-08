@@ -1,5 +1,5 @@
 ---
-date: '2022-01-01'
+date: '2024-03-01'
 title: 'Senior Frontend Developer'
 company: 'Meleton'
 location: 'remote'
