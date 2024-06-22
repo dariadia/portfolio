@@ -138,7 +138,7 @@ const About = () => {
     isServer.reveal(revealContainer.current, srConfig());
   }, [prefersReducedMotion]);
 
-  const skills = ['JavaScript (ES6+)', 'CSS (CSS5, SCSS)', 'React', 'TypeScript', 'Node.js', 'Hugo'];
+  const skills = ['JavaScript (ES6+)', 'CSS (CSS5, SCSS)', 'React', 'Vue', 'TypeScript', 'Node.js'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
