@@ -2,7 +2,7 @@
 date: '2022-01-01'
 title: 'Senior Frontend Developer'
 company: 'Bookmate'
-location: 'Dublin, Ireland'
+location: 'remote: Dublin, Ireland'
 range: 'January 2022 - August 2022'
 year: 2022
 slug: senior-dev
